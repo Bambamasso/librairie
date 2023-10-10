@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Inter:wght@300;400&family=Tangerine:wght@700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+}
+/* partie des cadre */
+.inscription{
+    width: 100%;
+    height: auto;
+    border: solid 3px pink;
+   display: flex;
+   justify-content: center;
+}
+
+.cardre{
+    width: 48,5%;
+    border:solid 2px purple;
+    background: blue;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 200px;
+    margin-bottom: 50px;
+    /* justify-content: center; */
+   
+}
+
+.cardre .bve{
+width:500px;
+height: 550px;
+background: url(../image/UKFSVQVDEU6MGBATRGJ4XTL7XQ.jpeg);
+background-size: cover;
+background-position: center;
+}
+
+.cardre .formule{
+ width:500px;
+ height: 550px;
+background: yellow;
+display: flex;
+justify-content: center;
+} 
+/* fin des cadre */
+
+/* debut du formulaire */
+.formule form{
+  
+}
+form .logo{
+    text-align: center;
+}
+label{
+    font-family: 'Inter', sans-serif;
+}
+
+input{
+    width: 300px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background:none;
+    border-bottom: 2px solid black;
+}
+#submit{
+    border: none;
+    background: #2A87DD;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
