@@ -17,6 +17,7 @@ body{
 
 .cardre{
     width: 48,5%;
+    height: auto;
     /* border:solid 2px purple;
     background: blue; */
     display: flex;
@@ -30,7 +31,7 @@ body{
 
 .cardre .bve{
 width:500px;
-height: 360px;
+height: auto;
 background: url(../image/UKFSVQVDEU6MGBATRGJ4XTL7XQ.jpeg);
 background-size: cover;
 background-position: center;
@@ -45,7 +46,7 @@ background-position: center;
 
 .cardre .formule{
  width:500px;
- height: 360px;
+ height: auto;
 background: white;
 display: flex;
 justify-content: center;
@@ -77,7 +78,9 @@ input{
     border-bottom: 2px solid black;
 }
 #submit{
-    border: none;
+
+    border-radius: 5px ;
+    border-color: #2A87DD;
     background: #2A87DD;
     color: white;
     padding: 10px;
@@ -87,4 +90,5 @@ input{
 a{
     text-decoration: none;
     color: #2A87DD;
+    margin-bottom: 20px;
 }
