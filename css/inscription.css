@@ -3,24 +3,27 @@
 body{
     margin: 0;
     padding: 0;
+    background: #2A87DD;
 }
 /* partie des cadre */
 .inscription{
     width: 100%;
     height: auto;
-    border: solid 3px pink;
+    /* border: solid 3px pink; */
    display: flex;
+   margin-top: 100px;
    justify-content: center;
 }
 
 .cardre{
     width: 48,5%;
-    border:solid 2px purple;
-    background: blue;
+    /* border:solid 2px purple;
+    background: blue; */
     display: flex;
     flex-wrap: wrap;
-    margin-top: 200px;
-    margin-bottom: 50px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    /* margin-top: 200px; */
+    /* margin-bottom: 50px; */
     /* justify-content: center; */
    
 }
@@ -32,22 +35,32 @@ background: url(../image/UKFSVQVDEU6MGBATRGJ4XTL7XQ.jpeg);
 background-size: cover;
 background-position: center;
 }
+.bve p{
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    margin-top: 250px;
+}
 
 .cardre .formule{
  width:500px;
  height: 550px;
-background: yellow;
+background: white;
 display: flex;
 justify-content: center;
 } 
 /* fin des cadre */
 
 /* debut du formulaire */
-.formule form{
+
+/* .formule form{
   
-}
+} */
+
 form .logo{
     text-align: center;
+    margin-bottom: 20px;
 }
 label{
     font-family: 'Inter', sans-serif;
@@ -60,6 +73,7 @@ input{
     border-right: none;
     outline: none;
     background:none;
+    padding :8px;
     border-bottom: 2px solid black;
 }
 #submit{
@@ -68,5 +82,6 @@ input{
     color: white;
     padding: 10px;
     margin-top: 20px;
+   
 }
 

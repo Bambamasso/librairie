@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Inter:wght@300;400&family=Tangerine:wght@700&display=swap');
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+*{
+    box-sizing: border-box;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.onglets{
+   display: flex;
+   align-items: center;
+   
+}
+/* .onglets .droit{
+   
+} */
+
+.droit ul{
+    list-style-type: none;
+   
+}
+.droit ul li{
+    display: inline;
+    margin-left: 10px;
+}
+.gauche{
+    display: flex;
+}
+
+.gauche a{
+    margin-right: 40px; 
+}
+
