@@ -14,6 +14,7 @@ body{
     align-items: center;
     background: #2A87DD;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; ;
+    z-index: 1;
 
 }
 
@@ -67,7 +68,7 @@ body{
     position: absolute;
     left: 0;
     width: 200px;
-    background: white;
+    background: #2A87DD;
     display: none;
 }
 
@@ -129,5 +130,77 @@ body{
         display: initial;
     }
 }
+ /* fin de responsivité */
 
- 
+ /* debut du corps de la page */
+ .section1{
+    width: 100%;
+    position: absolute; 
+    margin-top: 50px;
+ }
+ .section1 .header{
+    width: 100%;
+    height:400px; 
+    background: url(../image/ACT-Litteratie-01.jpeg);
+    background-size: cover;
+    background-position:center ;
+ }
+
+ .header .lesp{
+  float: right;
+   width: 500px;
+   margin-top: 50px;
+   margin-right: 50px;
+ }
+ .header .lesp .p1{
+    font-size: 30px;
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    color: white;
+   
+   }
+   .header .lesp .p2{
+    text-align: right;
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    /* font-weight: bold; */
+   }
+   /* fin de la section 1 */
+
+   /* debut section 2 */
+
+   .section2{
+    width: 100%;
+    position: relative;
+    top: 500px;
+   }
+
+   .categories{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    width: 100%;
+
+    max-width: 1200px;
+   }
+   .articles{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 2em;
+    border: 1PX solid yellow;
+
+   }
+   .articles .article{
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        height: 200px;
+        box-shadow: 0px 0px 5px 1px #aaa;
+        border-radius: 2px;
+        background-color: #fff;
+        border: 1PX solid red;
+   }
+
