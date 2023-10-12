@@ -3,9 +3,10 @@
 body{
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
 }
-*{
-    box-sizing: border-box;
+*{ 
+box-sizing: border-box;
 }
 .nav{width: 100%;
     display: flex;
@@ -13,7 +14,7 @@ body{
     justify-content: space-between;
     align-items: center;
     background: #2A87DD;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; ;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; 
     z-index: 1;
 
 }
@@ -140,7 +141,7 @@ body{
  }
  .section1 .header{
     width: 100%;
-    height:400px; 
+    height:450px; 
     background: url(../image/ACT-Litteratie-01.jpeg);
     background-size: cover;
     background-position:center ;
@@ -174,33 +175,157 @@ body{
     width: 100%;
     position: relative;
     top: 500px;
+    display: flex;
+    justify-content: center;
    }
 
    .categories{
-    display: flex;
+    /* display: flex;
+    justify-content:center;
     flex-direction: column;
     align-items: center;
-    gap: 2em;
-    width: 100%;
-
-    max-width: 1200px;
-   }
-   .articles{
+    gap: 2em; */
+    grid-gap: 2em;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    gap: 2em;
-    border: 1PX solid yellow;
-
+    width: 100%;
+    grid-template-columns: 100%;
+    /* border: 3px solid rgb(0, 255, 0); */
    }
+
+   .categories h2{
+     text-align: center;
+     color: #2A87DD;
+     font-family: 'Inter', sans-serif;
+     font-size: 35px;
+   }
+
+   .articles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1300px;
+    /* border: 1PX solid yellow; */
+    margin: 20px auto;
+   }
+
    .articles .article{
-        display: flex;
-        flex-direction: column;
+        /* flex-direction: column;
         max-width: 400px;
-        height: 200px;
         box-shadow: 0px 0px 5px 1px #aaa;
         border-radius: 2px;
-        background-color: #fff;
-        border: 1PX solid red;
+        background-color: #fff; */
+        width: 400px;
+        text-align: center;
+        margin-left: 10px;
+        margin-top: 10px;
+        /* border: 1PX solid red; */
+        background: white; 
+        box-shadow:rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; ;
    }
+
+.articles .article img{
+    height: 350px;
+    width: 350px;
+    margin-top: 10px;
+   transition: transform 0.25;
+
+}
+
+.articles .article img:hover{
+    transform: scale(1.02);
+    transition: 0.5s;
+}
+.article p a{
+text-decoration: none;
+font-family: 'Inter', sans-serif;
+color: #2A87DD;
+}
+/* fin de la section 2 */
+
+/* debut de la section 3 */
+
+.section3{
+    width: 100%;
+    position: relative;
+    top: 500px;
+    display: flex;
+    justify-content: center;
+   }
+
+   .populaire{
+    /* display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em; */
+    grid-gap: 2em;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 100%;
+    /* border: 3px solid rgb(0, 255, 0); */
+   }
+
+   .populaire h2{
+     text-align: center;
+     color: #2A87DD;
+     font-family: 'Inter', sans-serif;
+     font-size: 35px;
+   }
+
+   .livres{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1300px;
+    /* border: 1PX solid yellow; */
+    margin: 20px auto;
+   }
+
+   .livres .livre{
+        /* flex-direction: column;
+        max-width: 400px;
+        box-shadow: 0px 0px 5px 1px #aaa;
+        border-radius: 2px;
+        background-color: #fff; */
+        width: 350px;
+        text-align: center;
+        margin-left: 20px;
+        margin-top: 10px;
+        /* border: 1PX solid red; */
+        background: white; 
+        box-shadow:rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; ;
+   }
+
+.livres .livre img{
+    height: 350px;
+    width: 300px;
+    margin-top: 10px;
+   transition: transform 0.25;
+
+}
+
+.livres .livre img:hover{
+    transform: scale(1.02);
+    transition: 0.5s;
+}
+.livre p a{
+text-decoration: none;
+font-family: 'Inter', sans-serif;
+color: #2A87DD;
+}
+
+.livre button{
+    margin-bottom:20px;
+    width: 200px;
+    padding: 5px;
+    background: #8ABC76;
+    border: none;
+}
+.livre button a{
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
 
