@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Inter:wght@300;400&family=Tangerine:wght@700&display=swap');
+
+body{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+*{ 
+box-sizing: border-box;
+}
+.nav{width: 100%;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    background: #2A87DD;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; 
+    z-index: 1;
+
+}
+
+ .onglets{
+   display: flex;
+   align-items: center;
+   
+}
+/* .onglets .droit*/
+
+.droit ul{
+    list-style-type: none;
+   
+}
+.droit ul li{
+   position:relative ;
+   float: left;
+}
+.droit ul li a{
+    font-size: 20px;
+    padding: 20px;
+    display: block;
+}
+.droit a{
+ text-decoration: none;
+ color: white;
+ font-family: 'Inter', sans-serif;
+}
+.droit a:hover{
+    color:#8ABC76;
+ }
+ 
+.gauche{
+    display: flex;
+    align-items: center;
+}
+
+.gauche a{
+    margin-right: 50px; 
+}
+.gauche input{
+   width: 300px;
+   padding: 8px;
+   border-radius:5px;
+   border: none;
+   outline: none;
+
+}
+
+.droit ul li ul{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: #2A87DD;
+    display: none;
+}
+
+.droit ul li ul li{
+    width: 100%;
+    border-top: 1px solid greenyellow;
+}
+.droit ul li ul li ul{
+    left: 200px;
+    top: 0px;
+}
+.droit ul li:focus-within >ul,
+.droit ul li:hover >ul{
+   display: initial;
+}
+#barre{
+    display: none;
+}
+.onglets label{
+    cursor: pointer;
+    display: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+
+}
+/* responsivité */
+
+@media(max-width:947px){
+  
+    .onglets label{
+        display: block;
+    } 
+    .onglets .droit{
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        right: 0px;
+        background: #2A87DD;
+        display: none;
+    }
+
+    .onglets .droit ul li{
+        width: 100%;
+    }
+    .onglets .droit ul li ul{
+        position: relative;
+        width: 100%;
+    }
+    .onglets .droit ul li ul li{
+       background: rgb(138, 138, 241);
+    }
+    .onglets .droit ul li ul li ul{
+        width: 100%;
+        left: 0;
+     }
+
+    #barre:checked ~ .droit{
+        display: initial;
+    }
+}
+ /* fin de responsivité */
+ section {
+    position: absolute;
+    top: 100px;
+ }

@@ -4,7 +4,6 @@ body{
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
-    /* background: #2A87DD; */
 }
 *{ 
 box-sizing: border-box;
@@ -63,7 +62,6 @@ box-sizing: border-box;
    border-radius:5px;
    border: none;
    outline: none;
-   background: white;
 
 }
 
@@ -96,7 +94,6 @@ box-sizing: border-box;
     color: white;
     font-size: 20px;
     font-family: 'Inter', sans-serif;
-
 }
 /* responsivité */
 
@@ -134,102 +131,100 @@ box-sizing: border-box;
     }
 }
  /* fin de responsivité */
-/* partie des cadre */
-.inscription{
+
+ /* debut section1 */
+
+ .section1{
+    width: 100%;
     position: absolute;
     top: 100px;
-    /* top: 100px; */
-    width: 100%;
-    height: auto;
-    /* border: solid 3px pink; */
-    display: flex;
-    margin-top: 100px;
-    justify-content: center;
-}
+   
+ }
 
-.cardre{
-    width: 48,5%;
-    height: auto;
-    /* border:solid 2px purple;
-    background: blue; */
+ .panier{
+    width: 100%;
+    /* margin-left: 50px; */
+    max-width: 1500px;
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: center;
+   
+ }
+
+ .table-panier{
     display: flex;
     flex-wrap: wrap;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    border: 1px solid #2A87DD;
-    /* margin-top: 200px; */
-    /* margin-bottom: 50px; */
-    /* justify-content: center; */ 
-}
-
-.cardre .bve{
-width:500px;
-height: auto;
-background: url(../image/UKFSVQVDEU6MGBATRGJ4XTL7XQ.jpeg);
-background-size: cover;
-background-position: center;
-}
-.bve p{
-    text-align: center;
-    font-size: 20px;
-    font-family: 'Inter', sans-serif;
-    color: white;
-    margin-top: 150px;
-}
-
-.cardre .formule{
- width:500px;
- height: auto;
-background: white;
-display: flex;
-justify-content: center;
-} 
-/* fin des cadre */
-
-/* debut du formulaire */
-
-/* .formule form{
-  
-} */
-
-form .logo{
-    text-align: center;
-    margin-bottom: 20px;
-}
-label{
-    font-family: 'Inter', sans-serif;
-}
-
-input{
-    width: 300px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-    background:none;
-    padding :8px;
-    border-bottom: 2px solid black;
-}
-#submit{
-
-    border-radius: 5px ;
-    border-color: #2A87DD;
-    background: #2A87DD;
-    color: white;
-    padding: 10px;
-    margin-top: 20px;
-    font-family: 'Inter', sans-serif;
-}
-a{
-    text-decoration: none;
+ }
+ .table-panier h1{
     color: #2A87DD;
-    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    text-decoration: underline;
+    font-size: 30px;
+
+ }
+
+ table{
+    width: 100%;
+    border-collapse: collapse;
+ }
+ table thead th{
+    color: #2A87DD;
+    font-family: 'Inter', sans-serif;
+ }
+
+   td{
+    border: 1px solid black;
+    padding: 10px;
+ }
+ td span{
+    margin-left: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+ }
+ td a{
+    text-decoration: none;
+    color: #8ABC76;
+ }
+ tr{
+    border: 1px solid;
+    padding: 5px;
+ }
+
+ td input{
+    width: 50px;
+ }
+ .table-panier .validation{
+   width: 200px;
+   height: 200px;
+   /* background: #8ABC76; */
+    padding-bottom: 50px;
+ }
+
+ .validation .prixTotal{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ .validation .command {
+     width: 200px;
+     display: flex;
+     justify-content: center;
+     background: #8ABC76;
+     padding: 5px;
+     border-radius: 5px;
+ }
+
+ .validation .command a {
+   text-decoration: none;
+   color: white;
+   font-family: 'Inter', sans-serif;
 }
 /* debut footer */
-
 footer{
     width: 100%;
     position:relative;
-    top: 800px;
+    top: 700px;
 }
 footer .info{
     width: 100%;
@@ -291,6 +286,5 @@ footer .info .livraison{
     font-size: 25px;
     font-weight: bold;
 }
-
 
 
