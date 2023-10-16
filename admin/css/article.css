@@ -139,39 +139,70 @@ box-sizing: border-box;
     }
 }
  /* fin de responsivité */
- .section1 {
-    position: absolute;
-   top: 100px;
+ section {
+   
  }
 
  .section2{
-  width: 100%;
+  /* width: 100px; */
   position: absolute;
-  top: 200px;
+  top: 100px;
   display: flex;
   justify-content: center;
  }
-.poste{
-    /* display: flex;
-    flex-direction: column; */
-    /* align-items: center; */
+
+ .section2 .livres{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 2em;
     width: 100%;
     max-width: 1200px;
-}
+ }
 
-.poste table{
+ .livres form{
     width: 100%;
-    border-collapse: collapse;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+ }
+
+ .livres form .group {
+    display: flex;
+    flex-direction: column;
+ }
+
+ .livres form label {
+   color:#081B48 ;
+   width: fit-content;
+ }
+
+ .livres form input {
+   border: none;
+   outline: none;
+   border: 1px solid ;
+   padding: 10px;
+   resize: none;
+  }
+
+  .livres form input[type='submit']{
+    cursor: pointer;
+  }
+  .livres form input[type='submit']{
+    width: 100%;
+    max-width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 auto;
+    background: #2A87DD;
+    color: white;
     text-align: center;
-    background: #f1f1f1;
-}
 
-.poste table  th{
-    border: 1px solid;
-}
+  }
 
-.poste table td{
-   padding: 5px;
-   width: 120px;
-}
+  .livres form input[type='submit']:hover{
+  background:#2A87DD ;
+  border: 1px solid #2A87DD;
+  }

@@ -133,113 +133,160 @@ box-sizing: border-box;
  /* fin de responsivité */
 
  /* debut section1 */
+
  .section1{
-    position: absolute;
-    top: 150px;
     width: 100%;
+    position: absolute;
+    top: 100px;
+    display: flex;
+    justify-content: center;
+   
+ }
+
+ .panier{
+    width: 100%;
+    /* margin-left: 50px; */
+    max-width: 1500px;
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: center;
+   
+ }
+
+ .table-panier{
+    display: flex;
+    flex-wrap: wrap;
+ }
+ .table-panier h1{
+    color: #2A87DD;
+    font-family: 'Inter', sans-serif;
+    text-decoration: underline;
+    font-size: 30px;
+
+ }
+
+ table{
+    width: 100%;
+    border-collapse: collapse;
+ }
+ table thead th{
+    color: #2A87DD;
+    font-family: 'Inter', sans-serif;
+ }
+
+   td{
+    border: 1px solid black;
+    padding: 10px;
+ }
+ td span{
+    margin-left: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+ }
+ td a{
+    text-decoration: none;
+    color: #8ABC76;
+ }
+ tr{
+    border: 1px solid;
+    padding: 5px;
+ }
+
+ td input{
+    width: 50px;
+ }
+ .table-panier .validation{
+   width: 200px;
+   height: 200px;
+   /* background: #8ABC76; */
+    padding-bottom: 50px;
+ }
+
+ .validation .prixTotal{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ .validation .command {
+     width: 200px;
+     display: flex;
+     justify-content: center;
+     background: #8ABC76;
+     padding: 5px;
+     border-radius: 5px;
+ }
+
+ .validation .command a {
+   text-decoration: none;
+   color: white;
+   font-family: 'Inter', sans-serif;
+}
+/* debut footer */
+footer{
+    width: 100%;
+    position:relative;
+    top: 700px;
+}
+footer .info{
+    width: 100%;
+    height: auto;
+    background: #2A87DD;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-   /* justify-content: space-around; */
-  
- }
- .section1 .livre{
-  width: 400px;
-  height: 400px;
-  /* background:  */
-   display: flex;
-   justify-content: center;
-    box-shadow:rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; 
- }
-
-  .livre img{
-    width: 300px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .section1 .achat{
-    display: flex;
-    /* margin-left: 50px; */
-  }
-  .info{
-    margin-left: 50px;
-    font-family: 'Inter', sans-serif;
-
-  }
-  .info .nom{
-    font-size: 30px;
-    font-family: 'Inter', sans-serif;
-  }
-
-  .info .auteur{
-    text-decoration: underline;
-    margin-bottom: 30px;
-  }
-
-  .info .prix{
-    margin-top: 30px;
-    width: 100px;
-    height: 50px;
-    border: 1px solid #2A87DD;
-  }
-  
-.info .button{
-    width: 150px;
-    padding: 8px;
-    background: #2A87DD;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    /* margin-left: 50px; */
-    margin-top: 10px;
-    cursor: pointer;
 }
-/* fin section1 */
-
-/* debut section2 */
-.resumé{
-    position: absolute;
-    top: 600px;
-    width: 100%;
-  
+footer .info .livraison{
+  margin-left: 100px;
+   width: 120px;
+   margin-top: 10px;
+   margin-bottom: 20px;
+     
 }
-
-.resumé .resum{
-    margin-left: 50px;
-}
-
-.resumé .resum .extrait {
- width: 100%;
- max-width: 1100px;
- /* box-shadow:rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; */
-}
-h2{
-    margin-left: 20px;
-    color: #2A87DD;
-}
-
-.resumé .resum .extrait p {
-text-align: justify;
-margin-left: 20px;
-margin-right: 20px;
-font-family: 'Inter', sans-serif;
-font-size: 18px;
-/* color: #2A87DD; */
-/* opacity: 0.5; */
-}
- .graph {
-    width: 100%;
-    max-width: 500px;
-    margin-left: 50px;
-    /* box-shadow:rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; */
-   }
-    .graph p {
-    text-align: justify;
-    margin-left: 20px;
-    margin-right: 20px;
-    font-family: 'Inter', sans-serif;
+.livraison p{
+    /* text-align: center; */
     font-size: 18px;
-    /* color: #2A87DD; */
-    /* opacity: 0.5; */
-    
-    }
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.livraison img{
+    text-align: center;
+    margin-left: 20px;
+}
+
+.adresse{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.reseaux{
+    display: flex;
+}
+.reseaux .img{
+   margin-left: 10px;
+}
+
+
+.navigation{
+    margin-left: 10px;
+   
+}
+.navigation ul li{
+   list-style-type: none;
+   margin-bottom: 10px;
+   font-family: 'Inter', sans-serif;
+   color: #2A87DD;
+   font-size: 18px;
+   /* text-align: center; */
+}
+
+.navigation h3{
+     text-align: center;
+    text-decoration: underline;
+    color: #2A87DD;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+

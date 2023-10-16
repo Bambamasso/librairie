@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Inter:wght@300;400&family=Tangerine:wght@700&display=swap');
+
+body{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+*{ 
+box-sizing: border-box;
+}
+.nav{width: 100%;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    background: #2A87DD;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; 
+    z-index: 1;
+
+}
+
+ .onglets{
+   display: flex;
+   align-items: center;
+   
+}
+/* .onglets .droit*/
+
+.droit ul{
+    list-style-type: none;
+   
+}
+.droit ul li{
+   position:relative ;
+   float: left;
+}
+.droit ul li a{
+    font-size: 20px;
+    padding: 20px;
+    display: block;
+}
+.droit a{
+ text-decoration: none;
+ color: white;
+ font-family: 'Inter', sans-serif;
+}
+.droit a:hover{
+    color:#8ABC76;
+ }
+ 
+.gauche{
+    display: flex;
+    align-items: center;
+}
+
+.gauche a{
+    margin-right: 50px; 
+}
+.gauche input{
+   width: 300px;
+   padding: 8px;
+   border-radius:5px;
+   border: none;
+   outline: none;
+
+}
+
+.droit ul li ul{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: #2A87DD;
+    display: none;
+}
+
+.droit ul li ul li{
+    width: 100%;
+    border-top: 1px solid greenyellow;
+}
+.droit ul li ul li ul{
+    left: 200px;
+    top: 0px;
+}
+.droit ul li:focus-within >ul,
+.droit ul li:hover >ul{
+   display: initial;
+}
+#barre{
+    display: none;
+}
+.onglets label{
+    cursor: pointer;
+    display: none;
+    color: white;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+
+}
+/* responsivité */
+
+@media(max-width:947px){
+  
+    .onglets label{
+        display: block;
+    } 
+    .onglets .droit{
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        right: 0px;
+        background: #2A87DD;
+        display: none;
+    }
+
+    .onglets .droit ul li{
+        width: 100%;
+    }
+    .onglets .droit ul li ul{
+        position: relative;
+        width: 100%;
+    }
+    .onglets .droit ul li ul li{
+       background: rgb(138, 138, 241);
+    }
+    .onglets .droit ul li ul li ul{
+        width: 100%;
+        left: 0;
+     }
+
+    #barre:checked ~ .droit{
+        display: initial;
+    }
+}
+ /* fin de responsivité */
+
+ /* debut du corps de la page */
+ .section1{
+    width: 100%;
+    position: absolute; 
+    margin-top: 50px;
+ }
+ .section1 .header{
+    width: 100%;
+    height:450px; 
+    background: url(../../image/ACT-Litteratie-01.jpeg);
+    background-size: cover;
+    background-position:center ;
+ }
+
+ .header .lesp{
+  float: right;
+   width: 500px;
+   margin-top: 50px;
+   margin-right: 50px;
+ }
+ .header .lesp .p1{
+    font-size: 30px;
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    color: white;
+   
+   }
+   .header .lesp .p2{
+    text-align: right;
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    /* font-weight: bold; */
+   }
+   /* fin de la section 1 */
+
+   /* debut section 2 */
+
+   .section2{
+    width: 100%;
+    position: relative;
+    top: 500px;
+    display: flex;
+    justify-content: center;
+   }
+
+   .categories{
+    /* display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em; */
+    grid-gap: 2em;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 100%;
+    /* border: 3px solid rgb(0, 255, 0); */
+   }
+
+   .categories h2{
+     text-align: center;
+     color: #2A87DD;
+     font-family: 'Inter', sans-serif;
+     font-size: 35px;
+   }
+
+   .articles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1500px;
+    /* border: 1PX solid yellow; */
+    margin: 20px auto;
+   }
+
+   .articles .article{
+        /* flex-direction: column;
+        max-width: 400px;
+        box-shadow: 0px 0px 5px 1px #aaa;
+        border-radius: 2px;
+        background-color: #fff; */
+        width: 400px;
+        text-align: center;
+        margin-left: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        /* border: 1PX solid red; */
+        background: white; 
+        box-shadow:rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; 
+   }
+
+.articles .article img{
+    height: 350px;
+    width: 350px;
+    margin-top: 10px;
+   transition: transform 0.25;
+
+}
+
+.articles .article img:hover{
+    transform: scale(1.02);
+    transition: 0.5s;
+}
+.article p a{
+text-decoration: none;
+font-family: 'Inter', sans-serif;
+color: #2A87DD;
+}
+/* fin de la section 2 */
+
+/* debut de la section 3 */
+
+.section3{
+    width: 100%;
+    position: relative;
+    top: 500px;
+    display: flex;
+    justify-content: center;
+   
+   }
+
+   .populaire{
+    /* display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em; */
+    grid-gap: 2em;
+    display: grid;
+    width: 100%;
+    padding: 25px;
+    grid-template-columns: 100%;
+    /* border: 3px solid rgb(0, 255, 0); */
+   }
+
+   .populaire h2{
+     text-align: center;
+     color: #2A87DD;
+     font-family: 'Inter', sans-serif;
+     font-size: 35px;
+   }
+
+   .livres{
+    display: flex;
+    flex-wrap: wrap;
+    /* overflow-x: auto; */
+    justify-content: center;
+    width: 100%;
+    max-width: 1300px;
+    /* border: 1PX solid yellow; */
+     margin: 20px auto; 
+   }
+
+   .livres .livre{
+        /* flex-direction: column;
+        max-width: 400px;
+        box-shadow: 0px 0px 5px 1px #aaa;
+        border-radius: 2px;
+        background-color: #fff; */
+        width: 320px;
+        text-align: center;
+        margin-left: 30px;
+        margin-top: 10px;
+        /* border: 1PX solid red; */
+        background: white; 
+        box-shadow:rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; ;
+   }
+
+.livres .livre img{
+    height: 250px;
+    width: 250px;
+    margin-top: 10px;
+   transition: transform 0.25;
+
+}
+
+.livres .livre img:hover{
+    transform: scale(1.02);
+    transition: 0.5s;
+}
+.livre p a{
+text-decoration: none;
+font-family: 'Inter', sans-serif;
+color: #2A87DD;
+}
+
+.livre button{
+    margin-bottom:20px;
+    width: 200px;
+    padding: 5px;
+    background: #8ABC76;
+    border: none;
+}
+.livre button a{
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+/* fin section 3 */
+
+/* debut footer */
+footer{
+    width: 100%;
+    position:relative;
+    top: 500px;
+}
+footer .info{
+    width: 100%;
+    height: auto;
+    background: #2A87DD;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+footer .info .livraison{
+  margin-left: 100px;
+   width: 120px;
+   margin-top: 10px;
+   margin-bottom: 20px;
+     
+}
+.livraison p{
+    /* text-align: center; */
+    font-size: 18px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.livraison img{
+    text-align: center;
+    margin-left: 20px;
+}
+
+.adresse{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.reseaux{
+    display: flex;
+}
+.reseaux .img{
+   margin-left: 10px;
+}
+
+
+.navigation{
+    margin-left: 10px;
+   
+}
+.navigation ul li{
+   list-style-type: none;
+   margin-bottom: 10px;
+   font-family: 'Inter', sans-serif;
+   color: #2A87DD;
+   font-size: 18px;
+   /* text-align: center; */
+}
+
+.navigation h3{
+     text-align: center;
+    text-decoration: underline;
+    color: #2A87DD;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+
