@@ -1,3 +1,65 @@
+<?php
+  //vérification des champs
+function escape($valeur){
+    return trim(strip_tags($valeur));
+}
+
+ //vérifie si le champs ne sont pas vide
+
+ if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['motDePasse'])){
+  //recuperation des données dans des variable
+     $nom= escape($_POST['nom']);
+     $prenom= escape($_POST['prenom']);
+     $email= escape($_POST['email']);
+     $motDePasse= escape($_POST['motDePasse']);
+     $confirmation=escape($_POST['cMotDePasse']);
+
+     if(empty($nom) || strlen($nom)<2){
+        $err_nom="Erreur sur le nom";
+     }
+
+     if(empty($prenom) || strlen($prenom)<2){
+        $err_prenom="Erreur sur le prenom";
+     }
+
+     if(empty($email) || strlen($email)<2){
+        $err_email="Erreur sur l'email";
+     }
+
+     if(empty($motDePasse) || strlen($motDePasse)<2){
+        $err_motDePasse="Erreur sur le mot de passe";
+     }
+
+     if(empty($confirmation) ){
+        $err_confirmation ="Erreur sur le mot de passe de confirmation";
+     }
+     if($confirmation  != $motDePasse){
+        $err_confirmation="le mot de passe de confirmation est different du mot de passe";
+     }
+
+     //connexion à la base de donnée
+     if(!isset($err_nom) && !isset($err_prenom)&& !isset($err_email)&& !isset($err_motDePasse) && !isset($err_confirmation)){
+
+        // $connexion=mysqli_connect('localhoste', 'root', '', 'librairie');
+        $connexion=mysqli_connect('localhost','root', '','librairie');
+       if(!$connexion){
+        die('erreur de connexion');
+       }
+    
+      //insertion dans la base donnée
+      $insert="INSERT INTO users (nom, prenom, email, motPasse)";
+      $insert.="VALUES('$nom', '$prenom', '$email', '$motDePasse')";
+      $requet=mysqli_query($connexion, $insert);
+      if($requet){
+        echo "insertion validé";
+      }
+
+       header("LOCATION:./connexion.php");
+     }
+    
+ }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,14 +78,14 @@
            <label for="barre">Menu</label>
            <div class="droit">
                <ul>
-                   <li> <a href="../inedx.html">Accueil</a></li>
+                   <li> <a href="../inedx.php">Accueil</a></li>
                    <li><a href="">Contact</a></li>
                    <li><a href="">Categorie+</a>
                         <ul>
-                         <li><a href="./categorie-croissance.html">Croissance personnel</a></li>
-                         <li><a href="./categorie-humain.html">Psychologie et comportement humain</a></li>
-                         <li><a href="./categorie-motivation.html">Motivation-Inspiration</a></li>
-                         <li><a href="./categorie-confiance.html">Confience en soi</a></li>
+                         <li><a href="./categorie-croissance.php">Croissance personnel</a></li>
+                         <li><a href="./categorie-humain.php">Psychologie et comportement humain</a></li>
+                         <li><a href="./categorie-motivation.php">Motivation-Inspiration</a></li>
+                         <li><a href="./categorie-confiance.php">Confience en soi</a></li>
                            <!-- <li><a href="">lorem</a></li> -->
                         </ul>
   
@@ -35,7 +97,7 @@
           <div class="gauche">
              <input type="search" placeholder="recherhce..">
             <ul>
-              <a href="./php/connexion.html"><img src="../image/user.png" alt=""></a>
+              <a href="./php/connexion.php"><img src="../image/user.png" alt=""></a>
              <a href=""><img src="../image/panier.png" alt=""></a>
             </ul>
           </div>
@@ -52,16 +114,36 @@
                     <img src="../image/Capture_d_écran_2023-10-05_à_14.35.01-removebg-preview.png" alt="" width="60px">
                  </p>
                  <label for="nom" >Nom</label><br>
-                 <input type="text" name="nom" id="nom"><br><br><br>
+                 <input type="text" name="nom" id="nom"><br><br>
+                 <?php if(!empty($err_nom)){
+                    echo $err_nom;
+                 } 
+                 ?><br>
                  <label for="prenom">Prenom</label><br>
                  <input type="text" name="prenom" id="prenom"><br><br><br>
+                 <?php if(!empty($err_prenom)){
+                    echo $err_prenom;
+                 } 
+                 ?>
                  <label for="email">Email</label><br>
                  <input type="email" name="email" id="email"><br><br><br>
+                 <?php if(!empty($err_email)){
+                    echo $err_email;
+                 } 
+                 ?>
                  <label for="motDePasse">Mot de passe</label><br>
                  <input type="password" name="motDePasse" id="motDePasse"><br><br><br>
+                 <?php if(!empty($err_motDePasse)){
+                    echo $err_motDePasse;
+                 } 
+                 ?>
                  <label for="cMotDePasse">Confirmer mot de passe</label><br>
                  <input type="password" name="cMotDePasse" id="cMotDePasse"><br><br>
-                 <input type="submit" value="sinscrire" id="submit">
+                 <?php if(!empty($err_confirmation)){
+                    echo $err_confirmation;
+                 } 
+                 ?>
+                 <input type="submit" value="s'inscrire" id="submit">
 
              </form>
           </div>

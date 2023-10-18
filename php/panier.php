@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>connexion</title>
-    <link type="text/css" rel="stylesheet" href="../css/connexion.css">
+    <title>Panier</title>
+    <link type="text/css" rel="stylesheet" href="../css/panier.css">
 </head>
 <body>
     <nav class="nav">
@@ -14,55 +14,79 @@
            <label for="barre">Menu</label>
            <div class="droit">
                <ul>
-                   <li> <a href="../inedx.html">Accueil</a></li>
+                   <li> <a href="../inedx.php">Accueil</a></li>
                    <li><a href="">Contact</a></li>
                    <li><a href="">Categorie+</a>
                         <ul>
-                            <li><a href="./categorie-croissance.html">Croissance personnel</a></li>
-                            <li><a href="./categorie-humain.html">Psychologie et comportement humain</a></li>
-                            <li><a href="./categorie-motivation.html">Motivation-Inspiration</a></li>
-                            <li><a href="./categorie-confiance.html">Confience en soi</a></li>
+                            <li><a href="./categorie-croissance.php">Croissance personnel</a></li>
+                            <li><a href="./categorie-humain.php">Psychologie et comportement humain</a></li>
+                            <li><a href="./categorie-motivation.php">Motivation-Inspiration</a></li>
+                            <li><a href="./categorie-confiance.php">Confience en soi</a></li>
                               <!-- <li><a href="">lorem</a></li> -->
                         </ul>
-  
+
                       </li>
-  
+
                   </ul>
               </div>
          </div>
           <div class="gauche">
              <input type="search" placeholder="recherhce..">
             <ul>
-              <a href="./php/connexion.html"><img src="../image/user.png" alt=""></a>
-             <a href=""><img src="../image/panier.png" alt=""></a>
+              <a href="./connexion.php"><img src="../image/user.png" alt=""></a>
+             <a href="./panier.php"><img src="../image/panier.png" alt=""></a>
             </ul>
           </div>
       </nav>
   <!--fin barre de navigation  -->
-    <div class="inscription">
-        <div class="cardre">
-           <div class="bve">
-             <p>Bienvenue sur notre page de connexion </p>
-           </div>
-           <div class="formule">
-              <form action="" method="post">
-                 <p class="logo">
-                     <img src="../image/Capture_d_écran_2023-10-05_à_14.35.01-removebg-preview.png" alt="" width="60px">
-                  </p>
-                  
-                  <label for="email">Email</label><br>
-                  <input type="email" name="email" id="email"><br><br><br>
-                  <label for="motDePasse">Mot de passe</label><br>
-                  <input type="password" name="motDePasse" id="motDePasse"><br><br><br>
-                  <input type="submit" value="sinscrire" id="submit">
-                  <p>Vous n'avez pas de compte? <a href="./inscription.html">creer un compte</a></p>
-              </form>
-             
-           </div>
-         </div>
-     </div>
- 
-     <!-- debut du footer -->
+  <!-- debut section1 -->
+  <section class="section1">
+       <div class="panier">
+         <div class="table-panier">
+             <h1>Mon panier</h1>
+
+             <table>
+                  <thead>
+                      <tr>
+                         <th>Produit</th>
+                         <th>Quantité</th>
+                         <th>Prix unitaire</th>
+                         <th>Action</th>
+                      </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                          <td class="article" style="display: flex; align-items: center;">
+                              <img src="../image/developement des competeces.png" alt="fvdhgj" width="80px">
+                              <span>l'energie de la competense</span>
+                          </td>
+                          <td><input type="number"></td>
+                          <td>Prix : ..fcfa</td>
+                          <td><a href="">Suprimer</a></td>
+                       </tr>
+                   </tbody>
+                </table>
+
+                <div class="validation">
+                     <h1>Recapitulatif</h1>
+                     <div class="prixTotal">
+                     <p style="font-size: 20px;">Total panier :</p>
+                     <p>... produits</p>
+                    </div>
+                    <div class="prixTotal">
+                        <p style="font-size: 20px;" >Total: </p>
+                        <p>00fcfa</p>
+                       </div>
+                  <div class="command">
+                     <a href="">Commander</a>
+                  </div>
+                </div>
+               
+            </div>
+       </div>
+  </section>
+
+   <!-- debut du footer -->
  <footer>
     <div class="info">
         <div class="livraison">
@@ -114,6 +138,5 @@
        </div>
     </div>
 </footer>
-
 </body>
 </html>

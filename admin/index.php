@@ -1,3 +1,5 @@
+ <?php?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +16,8 @@
            <label for="barre">Menu</label>
            <div class="droit">
                <ul>
-                   <li> <a href="./index.html">Accueil</a></li>
-                    <li><a href="./article.html">tableau-bord</a></li>
+                   <li> <a href="./index.php">Accueil</a></li>
+                    <li><a href="./article.php">tableau-bord</a></li>
                   <!-- <li><a href="">Categorie+</a>
                         <ul>
                            <li><a href="">lorem</a></li>
@@ -33,7 +35,7 @@
           <div class="gauche">
              <!-- <input type="search" placeholder="recherhce.."> -->
             <!-- <ul>
-              <a href="../php/connexion.html"><img src="./image/user.png" alt=""></a>
+              <a href="../php/connexion.php"><img src="./image/user.png" alt=""></a>
              <a href=""><img src="./image/panier.png" alt=""></a>
             </ul> -->
           </div>

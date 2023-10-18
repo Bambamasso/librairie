@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link type="text/css" rel="stylesheet" href="./css/voir.css">
+    <link type="text/css" rel="stylesheet" href="../css/voir.css">
 </head>
 <body>
     <nav class="nav">
@@ -14,14 +14,14 @@
            <label for="barre">Menu</label>
            <div class="droit">
                <ul>
-                   <li> <a href="./index.html">Accueil</a></li>
+                   <li> <a href="../inedx.php">Accueil</a></li>
                    <li><a href="">Contact</a></li>
                    <li><a href="">Categorie+</a>
                         <ul>
-                         <li><a href="../php/categorie-croissance.html">Croissance personnel</a></li>
-                         <li><a href="../php/categorie-humain.html">Psychologie et comportement humain</a></li>
-                         <li><a href="../php/categorie-motivation.html">Motivation-Inspiration</a></li>
-                         <li><a href="../php/categorie-confiance.html">Confience en soi</a></li>
+                         <li><a href="./categorie-croissance.php">Croissance personnel</a></li>
+                         <li><a href="./categorie-humain.php">Psychologie et comportement humain</a></li>
+                         <li><a href="./categorie-motivation.php">Motivation-Inspiration</a></li>
+                         <li><a href="./categorie-confiance.php">Confience en soi</a></li>
                            <!-- <li><a href="">lorem</a></li> -->
                         </ul>
 
@@ -33,8 +33,8 @@
           <div class="gauche">
               <input type="search" placeholder="recherhce.."> 
             <ul>
-              <a href="./php/connexion.html"> Profile<img src="../image/user.png" alt=""></a>
-              <a href="./panier.html"><img src="../image/panier.png" alt=""></a>
+              <a href="./php/connexion.php"><img src="../image/user.png" alt=""></a>
+              <a href="./panier.php"><img src="../image/panier.png" alt=""></a>
             </ul>
           </div>
       </nav>
@@ -53,7 +53,7 @@
              <div class="prix">
              <p>Prix:</p>
              </div>
-             <div class="button"><a href="./panier.html" style="text-decoration: none; color: white;">Ajouter au panier<a></div>
+             <div class="button"><a href="./connexion.php" style="text-decoration: none; color: white;">Ajouter au panier<a></div>
           </div>
           <div class="graph">
             <h2 class="nom">Paulo Coelho <span>(Auteur)</span></h2>

@@ -47,14 +47,25 @@ box-sizing: border-box;
 .droit a:hover{
     color:#8ABC76;
  }
- 
-.gauche{
+ .gauche{
     display: flex;
     align-items: center;
 }
+ 
+ .gauche ul li{
+    display: inline;
+}
 
-.gauche a{
+.gauche ul li {
     margin-right: 50px; 
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+.gauche a{
+    text-decoration: none;
+   color: white;
+   
 }
 .gauche input{
    width: 300px;
@@ -68,7 +79,7 @@ box-sizing: border-box;
 .droit ul li ul{
     position: absolute;
     left: 0;
-    width: 200px;
+    width: 260px;
     background: #2A87DD;
     display: none;
 }
@@ -76,6 +87,10 @@ box-sizing: border-box;
 .droit ul li ul li{
     width: 100%;
     border-top: 1px solid greenyellow;
+}
+
+.droit ul li ul li a{
+    font-size: 16px;
 }
 .droit ul li ul li ul{
     left: 200px;

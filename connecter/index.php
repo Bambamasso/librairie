@@ -1,28 +1,64 @@
+<?php
+  session_start();
+  $connexion=mysqli_connect ('localhost','root', '','librairie');
+  if(!$connexion){
+   die('erreur de connexion');
+  }
+
+  if(!empty($_SESSION['user_id'])){
+    $sessionUserId = $_SESSION['user_id'];
+
+    $select="SELECT * FROM users WHERE id = '$sessionUserId'";
+    $requet=mysqli_query($connexion,$select);
+    $recup=mysqli_fetch_assoc($requet);
+     
+    if($recup){
+        // var_dump($recup);
+    }else{
+        die("utilisateur inconnu");
+    }
+
+  }else{
+    header('LOCATION:../php/connexion.php');
+  }
+
+ //table des categorie
+ $selection="SELECT *FROM categorie ";
+ $execute=mysqli_query($connexion,$selection);
+ if($execute){
+    // echo "selection validé";
+    $affiches=mysqli_fetch_all($execute,MYSQLI_ASSOC);
+    // var_dump($affiches);
+ }
+
+ //selection de la table livre
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
-    <link type="text/css" rel="stylesheet" href="../connecter/css/accueil.css">
+    <link type="text/css" rel="stylesheet" href="./css/accueil.css">
 </head>
 <body>
     <nav class="nav">
       <div class="onglets">
-         <p class="logo"><img src="./image/Capture_d_écran_2023-10-05_à_14.35.01-removebg-preview.png" width="50px" alt=""></p>
+         <p class="logo"><img src="../image/Capture_d_écran_2023-10-05_à_14.35.01-removebg-preview.png" width="50px" alt=""></p>
          <input type="checkbox" id="barre">
          <label for="barre">Menu</label>
          <div class="droit">
              <ul>
-                 <li> <a href="">Accueil</a></li>
+                 <li> <a href="./index.php">Accueil</a></li>
                  <li><a href="">Contact</a></li>
                  <li><a href="">Categorie+</a>
                       <ul>
-                        <li><a href="../php/categorie-croissance.html">Croissance personnel</a></li>
-                        <li><a href="../php/categorie-humain.html">Psychologie et comportement humain</a></li>
-                        <li><a href="../php/categorie-motivation.html">Motivation-Inspiration</a></li>
-                        <li><a href="../php/categorie-confiance.html">Confience en soi</a></li>
-                          <!-- <li><a href="">lorem</a></li> -->
+                        <?php foreach($affiches as $value) :?>
+                        <li><a href="../php/categorie-croissance.php"><?php echo $value['type'];?></a></li>
+                        
+                        <?php endforeach;?>
                       </ul>
 
                     </li>
@@ -30,12 +66,13 @@
                 </ul>
             </div>
        </div>
-        <div class="gauche">
-           <input type="search" placeholder="recherhce..">
-          <ul>
-            <a href="./profile.html"> Profile<img src="../image/user.png" alt=""></a>
-           <a href="../php/panier.html"><img src="../image/panier.png" alt=""></a>
-          </ul>
+        <div class="gauche" >
+            <input type="search" placeholder="recherhce..">
+            <ul>
+                <li><?php echo "Salue".' ' .$recup['nom'];?></li>
+                <li> <a href="./profile.php">Profile</a></li>
+                <li> <a href="../php/panier.php"><img src="../image/panier.png" alt=""></a></li>
+            </ul>
         </div>
     </nav>
 <!--fin barre de navigation  -->
@@ -57,35 +94,36 @@
   <div class="categories">
      <h2>Explorer par Catégorie</h2>
      <div class="articles">
+         <?php foreach ($affiches as $value) :?>
          <div class="article">
-             <img src="./image/livre croissance personnellle.jpeg" alt="">
-             <p><a href="">Croissance personnel</a></p>
+             <img src=" <?php echo $value['image'];?>" alt="">
+             <p><a href=""><?php echo $value['type'] ;?></a></p>
           </div>
-
-          <div class="article">
+          <?php endforeach ;?>
+          <!-- <div class="article">
              <img src="./image/les_lois_de_la_nature_humaines-5008931-264-432.jpeg" alt="">
              <p><a href="">Psychologie et Comportement humain</a></p>
-          </div>
+          </div> -->
 
-          <div class="article">
+          <!-- <div class="article">
              <img src="./image/corps-n-oublie-rien.jpeg" alt="">
              <p><a href="">Santé et bien-être</a></p>
-         </div>
+         </div> -->
 
-         <div class="article">
+         <!-- <div class="article">
              <img src="./image/le_manifeste_de_la_motivation-1250691-264-432.jpeg" alt="">
              <p><a href="">Motivation-Inspiration</a></p>
-         </div>
+         </div> -->
 
-         <div class="article">
+         <!-- <div class="article">
              <img src="./image/developement des competeces.png" alt="">
              <p><a href="">Développement des competence</a></p>
-         </div>
+         </div> -->
 
-         <div class="article">
+         <!-- <div class="article">
              <img src="./image/livres-apprendre-a-avoir-confiance-en-soi.webp" alt="">
              <p><a href="">Confience en soi</a></p>
-         </div>
+         </div> -->
         </div>
 
     </div>
@@ -102,42 +140,42 @@
                  <img src="" alt="">
                  <p>Lorem</p>
                   <p>Prix</p>
-                <button type="submit"><a href="./voir.html">voir le produit</a></button>
+                <button type="submit"><a href="./voir.php">voir le produit</a></button>
             </div>
 
             <div class="livre">
                 <img src="" alt="">
                 <p>Lorem</p>
                 <p>Prix</p>
-                <button type="submit"><a href="./voir.html">voir le produit</a></button>
+                <button type="submit"><a href="./voir.php">voir le produit</a></button>
             </div>
 
             <div class="livre">
                 <img src="" alt="">
                 <p>Lorem</p>
                 <p>Prix</p>
-                <button type="submit"><a href="./voir.html">Voir le produit</a></button>
+                <button type="submit"><a href="./voir.php">Voir le produit</a></button>
             </div>
 
             <div class="livre">
                 <img src="" alt="">
                 <p>Lorem</p>
                 <p>Prix</p>
-                <button type="submit"><a href="./voir.html">Voir le produit</a></button>
+                <button type="submit"><a href="./voir.php">Voir le produit</a></button>
             </div>
 
             <div class="livre">
                 <img src="" alt="">
                 <p>Lorem</p>
                 <p>Prix</p>
-                <button type="submit"><a href="./voir.html">Voir le produit</a></button>
+                <button type="submit"><a href="./voir.php">Voir le produit</a></button>
             </div>
 
             <div class="livre">
                 <img src="" alt="">
                 <p>Lorem</p>
                 <p>Prix</p>
-                <button type="submit"><a href="./voir.html">Voir de produit</a></button>
+                <button type="submit"><a href="./voir.php">Voir de produit</a></button>
             </div>
         </div>
     </div>

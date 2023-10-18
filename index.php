@@ -18,10 +18,10 @@
                  <li><a href="">Contact</a></li>
                  <li><a href="">Categorie+</a>
                       <ul>
-                         <li><a href="./php/categorie-croissance.html">Croissance personnel</a></li>
-                         <li><a href="./php/categorie-humain.html">Psychologie et comportement humain</a></li>
-                         <li><a href="./php/categorie-motivation.html">Motivation-Inspiration</a></li>
-                         <li><a href="./php/categorie-confiance.html">Confience en soi</a></li>
+                         <li><a href="./php/categorie-croissance.php">Croissance personnel</a></li>
+                         <li><a href="./php/categorie-humain.php">Psychologie et comportement humain</a></li>
+                         <li><a href="./php/categorie-motivation.php">Motivation-Inspiration</a></li>
+                         <li><a href="./php/categorie-confiance.php">Confience en soi</a></li>
                          <!-- <li><a href="">lorem</a></li> -->
                       </ul>
 
@@ -33,8 +33,8 @@
         <div class="gauche">
            <input type="search" placeholder="recherhce..">
           <ul>
-            <a href="./php/connexion.html"><img src="./image/user.png" alt=""></a>
-           <a href="./php/panier.html"><img src="./image/panier.png" alt=""></a>
+            <a href="./php/connexion.php"><img src="./image/user.png" alt=""></a>
+           <a href="./php/panier.php"><img src="./image/panier.png" alt=""></a>
           </ul>
         </div>
     </nav>
@@ -102,42 +102,42 @@
                  <img src="" alt="">
                  <p>Lorem</p>
                   <p>Prix</p>
-                <button type="submit"><a href="./php/voir.html">voir le produit</a></button>
+                <button type="submit"><a href="./php/voir.php">voir le produit</a></button>
             </div>
 
             <div class="livre">
                 <img src="" alt="">
                 <p>Lorem</p>
                 <p>Prix</p>
-                <button type="submit"><a href="./php/voir.html">voir le produit</a></button>
+                <button type="submit"><a href="./php/voir.php">voir le produit</a></button>
             </div>
 
             <div class="livre">
                 <img src="" alt="">
                 <p>Lorem</p>
                 <p>Prix</p>
-                <button type="submit"><a href="./php/voir.html">Voir le produit</a></button>
+                <button type="submit"><a href="./php/voir.php">Voir le produit</a></button>
             </div>
 
             <div class="livre">
                 <img src="" alt="">
                 <p>Lorem</p>
                 <p>Prix</p>
-                <button type="submit"><a href="./php/voir.html">Voir le produit</a></button>
+                <button type="submit"><a href="./php/voir.php">Voir le produit</a></button>
             </div>
 
             <div class="livre">
                 <img src="" alt="">
                 <p>Lorem</p>
                 <p>Prix</p>
-                <button type="submit"><a href="./php/voir.html">Voir le produit</a></button>
+                <button type="submit"><a href="./php/voir.php">Voir le produit</a></button>
             </div>
 
             <div class="livre">
                 <img src="" alt="">
                 <p>Lorem</p>
                 <p>Prix</p>
-                <button type="submit"><a href="./php/voir.html">Voir de produit</a></button>
+                <button type="submit"><a href="./php/voir.php">Voir de produit</a></button>
             </div>
         </div>
     </div>
