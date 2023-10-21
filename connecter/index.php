@@ -56,7 +56,7 @@
                  <li><a href="">Categorie+</a>
                       <ul>
                         <?php foreach($affiches as $value) :?>
-                        <li><a href="../php/categorie-croissance.php"><?php echo $value['type'];?></a></li>
+                        <li><a href="./categories.php?id=<?php echo $value['id'];?>"><?php echo $value['type'];?></a></li>
                         
                         <?php endforeach;?>
                       </ul>

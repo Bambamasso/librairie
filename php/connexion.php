@@ -47,8 +47,6 @@
       }
       
 
-     
-
  }
  
 
@@ -70,7 +68,7 @@
            <label for="barre">Menu</label>
            <div class="droit">
                <ul>
-                   <li> <a href="../inedx.php">Accueil</a></li>
+                   <li> <a href="../index.php">Accueil</a></li>
                    <li><a href="">Contact</a></li>
                    <li><a href="">Categorie+</a>
                         <ul>

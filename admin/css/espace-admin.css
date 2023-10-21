@@ -157,7 +157,7 @@ box-sizing: border-box;
     /* align-items: center; */
     justify-content: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .poste table{
@@ -165,6 +165,17 @@ box-sizing: border-box;
     border-collapse: collapse;
     text-align: center;
     background: #f1f1f1;
+    /* height: 550px; */
+}
+.poste table tr{
+     /* padding: 5px; */
+    border: 1px solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+     
+
+
 }
 
 .poste table  th{
@@ -172,6 +183,13 @@ box-sizing: border-box;
 }
 
 .poste table td{
-   padding: 5px;
+    padding: 10px;
+    height: 10px;
+   /* padding: 5px;
    width: 120px;
+    height: 500px; 
+    text-align: justify; 
+   border: 1px solid; */
+  
+
 }

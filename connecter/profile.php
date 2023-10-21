@@ -97,7 +97,7 @@ if($execute){
                 </div>
               
           </div>
-          <button><a href="./deconnexion.php">Deconnexion</a></button>
+          <button><a href="./deconexion.php">Deconnexion</a></button>
             <form action="" method="post">
                 <h4>Modifier mes informations</h4>
                 

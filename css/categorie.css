@@ -4,7 +4,6 @@ body{
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
-    /* background: #2A87DD; */
 }
 *{ 
 box-sizing: border-box;
@@ -54,16 +53,32 @@ box-sizing: border-box;
     align-items: center;
 }
 
-.gauche a{
-    margin-right: 50px; 
-}
+/* .gauche ul {
+    list-style-type: none;
+    display: inline; 
+    background: red 
+   } */
+   
+   .gauche ul li{
+       display: inline;
+   }
+   
+   .gauche ul li {
+       margin-right: 50px; 
+       font-size: 18px;
+       font-family: 'Inter', sans-serif;
+       color: white;
+   }
+   .gauche a{
+       text-decoration: none;
+      color: white;}
+
 .gauche input{
    width: 300px;
    padding: 8px;
    border-radius:5px;
    border: none;
    outline: none;
-   background: white;
 
 }
 
@@ -78,12 +93,12 @@ box-sizing: border-box;
 .droit ul li ul li{
     width: 100%;
     border-top: 1px solid greenyellow;
+    font-size: 8px;
+}
+.droit ul li ul li a{
+    font-size: 16px; 
 }
 
-.droit ul li ul li a{
-   font-size: 16px;
-   font-family: 'Inter', sans-serif;
-}
 .droit ul li ul li ul{
     left: 200px;
     top: 0px;
@@ -101,7 +116,6 @@ box-sizing: border-box;
     color: white;
     font-size: 20px;
     font-family: 'Inter', sans-serif;
-
 }
 /* responsivité */
 
@@ -138,95 +152,100 @@ box-sizing: border-box;
         display: initial;
     }
 }
-/* partie des cadre */
-.inscription{
+ /* fin de responsivité */
+ .section3{
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 100px;
-    height: auto;
-    /* border: solid 3px pink; */
-   display: flex;
-   margin-top: 100px;
-   justify-content: center;
-}
+    display: flex;
+    justify-content: center;
+   
+   }
 
-.cardre{
-    width: 48,5%;
-    height: auto;
-    /* border:solid 2px purple;
-    background: blue; */
+   .populaire{
+    /* display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em; */
+    grid-gap: 2em;
+    display: grid;
+    width: 100%;
+    padding: 25px;
+    grid-template-columns: 100%;
+    /* border: 3px solid rgb(0, 255, 0); */
+   }
+
+   .populaire h2{
+     text-align: center;
+     color: #2A87DD;
+     font-family: 'Inter', sans-serif;
+     font-size: 35px;
+   }
+
+   .livres{
     display: flex;
     flex-wrap: wrap;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    border: 1px solid #2A87DD;
-    /* margin-top: 200px; */
-    /* margin-bottom: 50px; */
-    /* justify-content: center; */
-   
+    /* overflow-x: auto; */
+    justify-content: center;
+    width: 100%;
+    max-width: 1300px;
+    /* border: 1PX solid yellow; */
+     margin: 20px auto; 
+   }
+
+   .livres .livre{
+        /* flex-direction: column;
+        max-width: 400px;
+        box-shadow: 0px 0px 5px 1px #aaa;
+        border-radius: 2px;
+        background-color: #fff; */
+        width: 320px;
+        text-align: center;
+        margin-left: 30px;
+        margin-top: 10px;
+        /* border: 1PX solid red; */
+        background: white; 
+        box-shadow:rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; ;
+   }
+
+.livres .livre img{
+    height: 250px;
+    width: 250px;
+    margin-top: 10px;
+   transition: transform 0.25;
+
 }
 
-.cardre .bve{
-width:500px;
-height: auto;
-background: url(../image/UKFSVQVDEU6MGBATRGJ4XTL7XQ.jpeg);
-background-size: cover;
-background-position: center;
+.livres .livre img:hover{
+    transform: scale(1.02);
+    transition: 0.5s;
 }
-.bve p{
-    text-align: center;
-    font-size: 20px;
-    font-family: 'Inter', sans-serif;
-    color: white;
-    margin-top: 250px;
+.livre p a{
+text-decoration: none;
+font-family: 'Inter', sans-serif;
+color: #2A87DD;
 }
 
-.cardre .formule{
- width:500px;
- height: auto;
-background: white;
-display: flex;
-justify-content: center;
-} 
-/* fin des cadre */
-
-/* debut du formulaire */
-
-/* .formule form{
-  
-} */
-
-form .logo{
-    text-align: center;
-    margin-bottom: 20px;
-}
-label{
-    font-family: 'Inter', sans-serif;
-}
-
-input{
-    width: 300px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-    background:none;
-    padding :8px;
-    border-bottom: 2px solid black;
-}
-#submit{
+.livre button{
+    margin-bottom:20px;
+    width: 200px;
+    padding: 5px;
+    background: #8ABC76;
     border: none;
-    background: #2A87DD;
-    color: white;
-    padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px; 
 }
-/* debut footer */
+.livre button a{
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+/* fin section 3 */
 
+/* debut footer */
 footer{
     width: 100%;
     position:relative;
-    top: 900px;
+    top: 500px;
 }
 footer .info{
     width: 100%;
@@ -288,8 +307,4 @@ footer .info .livraison{
     font-size: 25px;
     font-weight: bold;
 }
-
-
-
-
 

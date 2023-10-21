@@ -70,7 +70,7 @@ box-sizing: border-box;
 .droit ul li ul{
     position: absolute;
     left: 0;
-    width: 200px;
+    width: 260px;
     background: #2A87DD;
     display: none;
 }
@@ -79,6 +79,12 @@ box-sizing: border-box;
     width: 100%;
     border-top: 1px solid greenyellow;
 }
+
+.droit ul li ul li a{
+   font-size: 16px;
+   /* font-family:'Inter', sans-serif; */
+}
+
 .droit ul li ul li ul{
     left: 200px;
     top: 0px;

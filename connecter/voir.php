@@ -22,6 +22,26 @@ if(!empty($_SESSION['user_id'])){
   header('LOCATION:../php/connexion.php');
 }
 
+//table des categorie
+$selection="SELECT *FROM categorie ";
+$execute=mysqli_query($connexion,$selection);
+if($execute){
+  // echo "selection validé";
+  $affiches=mysqli_fetch_all($execute,MYSQLI_ASSOC);
+  // // var_dump($affiches);
+}
+
+if(!empty($_GET['id'])){
+  $id_livre=$_GET['id'];
+  $selectLivre="SELECT * FROM livres WHERE id='$id_livre'";
+  $livre=mysqli_query($connexion,$selectLivre);
+  if($livre){
+     
+      $livre =mysqli_fetch_all($livre,MYSQLI_ASSOC );
+      // var_dump($livre);
+  }
+}
+
 
 
 ?>
@@ -45,11 +65,11 @@ if(!empty($_SESSION['user_id'])){
                    <li><a href="">Contact</a></li>
                    <li><a href="">Categorie+</a>
                         <ul>
-                         <li><a href="../php/categorie-croissance.php">Croissance personnel</a></li>
-                         <li><a href="../php/categorie-humain.php">Psychologie et comportement humain</a></li>
-                         <li><a href="../php/categorie-motivation.php">Motivation-Inspiration</a></li>
-                         <li><a href="../php/categorie-confiance.php">Confience en soi</a></li>
-                           <!-- <li><a href="">lorem</a></li> -->
+                        <?php foreach($affiches as $value) :?>
+                        <li><a href="./categories.php?id=<?php echo $value['id']; ?>"><?php echo $value['type'];?></a></li>
+                        
+                        <?php endforeach;?>
+                        
                         </ul>
 
                       </li>
@@ -72,33 +92,37 @@ if(!empty($_SESSION['user_id'])){
   <!-- debut section 1 -->
   <section class="section1">
       <div class="achat">
+        <?php foreach ($livre as $value):?>
          <div class="livre">
-             <img src="../image/livre croissance personnellle.jpeg" alt="nkvbn">
+             <img src="<?php echo $value['image'];?>" alt="nkvbn">
          </div>
 
           <div class="info">
-             <p class="nom">L'alchimiste</p>
-             <p class="auteur">Paulo Coelho <span>(Auteur)</span></p>
-             <p class="page">224 pages, Paru le 08/11/2017</p>
+             <p class="nom"><?php echo $value['nom'];?></p>
+             <p class="auteur"><?php echo $value['nom_auteur'];?> <span>(Auteur)</span></p>
+             <p class="page"> <?php echo $value['nombre_page'];?>, <?php echo $value['date_parution'];?></p>
              <div class="prix">
-             <p>Prix:</p>
+              <p>Prix:<?php echo $value['prix'];?></p>
              </div>
-             <div class="button"><a href="./panier.php" style="text-decoration: none; color: white;">Ajouter au panier<a></div>
+             <div class="button"><a href="./ajout-panier.php?id_livres=<?php echo $value['id']; ?>" style="text-decoration: none; color: white;">Ajouter au panier<a></div>
           </div>
           <div class="graph">
-            <h2 class="nom">Paulo Coelho <span>(Auteur)</span></h2>
-            <p>Paulo Coelho est né au Brésil à Rio de Janeiro en 1947. C'est un romancier, journaliste et interprète. Avec la publication de L'Alchimiste en 1994, il acquis une réputation international en vendant son roman à plusieurs dizaines de millions d'exemplaires. Aujourd'hui ses romans ont été traduits dans plus de 80 langues dans le monde.</p>
+            <h2 class="nom"><?php echo $value['nom_auteur'];?> <span>(Auteur)</span></h2>
+            <p><?php echo $value['biograthie_auteur'];?></p>
         </div>
+        <?php endforeach;?>
       </div>
   </section>
 <!-- fin de la section1 -->
 <!-- debut section2 -->
   <section class="resumé">
       <div class="resum">
+         <?php foreach($livre as $value):?>
          <div class="extrait">
              <h2>Resumé</h2>
-             <p>"Accomplir sa légende personnelle est la seule et unique obligation de l´homme.""Mon coeur craint de souffrir, dit le jeune homme à l'Alchimiste, une nuit qu'ils regardaient le ciel sans lune.- Dis-lui que la crainte de la souffrance est pire que la souffrance elle-même. Et qu'aucun coeur n'a jamais souffert alors qu'il était à la poursuite de ses rêves."Santiago, un jeune berger andalou, part à la recherche d'un trésor enfoui au pied des Pyramides. Lorsqu'il rencontre l'Alchimiste dans le désert, celui-ci lui apprend à écouter son coeur, à lire les signes du destin et, par-dessus tout, à aller au bout de son rêve.Merveilleux conte philosophique destiné à l'enfant qui sommeille en chacun de nous, ce livre a marqué une génération de lecteurs.</p>
+             <p><?php echo $value['resume'];?></p>
          </div>
+         <?php endforeach;?>
       </div>
   </section>
 </body>

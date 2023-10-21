@@ -1,3 +1,67 @@
+<?php 
+ session_start();
+ $connexion=mysqli_connect ('localhost','root', '','librairie');
+  if(!$connexion){
+   die('erreur de connexion');
+  }
+
+  if(!empty($_SESSION['admin_id'])){
+    $sessionAdmin = $_SESSION['admin_id'];
+
+    $select="SELECT * FROM admin WHERE id = '$sessionAdmin'";
+    $requet=mysqli_query($connexion,$select);
+    $recup=mysqli_fetch_assoc($requet);
+     
+    if($recup){
+        // var_dump($recup);
+    }else{
+        die("utilisateur inconnu");
+    }
+
+  }else{
+    header('LOCATION:../php/connexion.php');
+  }
+
+  //recuperation des categories
+   $categorie="SELECT *FROM categorie";
+   $query=mysqli_query($connexion,$categorie);
+
+  if($query){
+
+     $recuperation=mysqli_fetch_all($query,MYSQLI_ASSOC);
+    //  var_dump($recuperation);
+  }
+
+  if(!empty($_POST['livre'])&& !empty($_POST['prix']) && !empty($_POST['img-url']) && !empty($_POST['apparution']) && !empty($_POST['nbpage']) && !empty($_POST['description']) && !empty($_POST['categorie']) && !empty($_POST['nom_auteur'])&& !empty($_POST['biographie_auteur'])){
+   
+    $livre=strip_tags($_POST['livre']);
+    $prix=$_POST['prix'];
+    $img_url=$_POST['img-url'];
+    $apparution=$_POST['apparution'];
+    $nbpage=$_POST['nbpage'];
+    $description=$_POST['description'];
+    $categorie=$_POST['categorie'];
+    $nom_auteur=$_POST['nom_auteur'];
+    $biographie_auteur=$_POST['biographie_auteur'];
+    $id_admin = $sessionAdmin;
+
+    $insertion="INSERT INTO livres(id_admin, nom, prix, image, date_parution, nombre_page, resume, id_categorie , nom_auteur,	biograthie_auteur)";
+   $insertion.=" VALUES(?,?,?,?,?,?,?,?,?,?)";
+   $preparation=mysqli_prepare($connexion,$insertion);
+   $affectation=mysqli_stmt_bind_param($preparation,"isssssssss",$id_admin, $livre,$prix,$img_url,$apparution,$nbpage,$description,$categorie,$nom_auteur,$biographie_auteur);
+   mysqli_stmt_execute($preparation);
+
+   if(mysqli_affected_rows($connexion)>0){
+    // echo "insertion validé";
+    header('LOCATION:index.php');
+   }else{
+    die(mysqli_stmt_error($preparation));
+   }
+  }
+   
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +113,7 @@
      <form action="" method="post">
         <h3>Ajouter un nouveaux livre </h3>
        <div class="group">
-         <label for="">nom</label>
+         <label for="">Nom du livre</label>
          <input type="text" name="livre" id=" livre" placeholder="livre">
        </div>
         
@@ -79,14 +143,22 @@
        <div  class="group">
          
          <select name="categorie" id="categorie">
-            <option value="">Croissance personnel</option>
-            <option value=""> Psychologieet comportement humain</option>
-            <option value="">Motivation-Inspiration</option>
-            <option value="">Confience en soi</option>
+           <?php foreach ($recuperation as $value):?>
+            <option value="<?php echo $value['id'];?> "><?php echo $value['type'];?> </option>
+            <?php endforeach;?>
          </select>
          
         </div>
-      
+        <div  class="group">
+         <label for="">Nom de l'auteur</label>
+         <input type="text" name="nom_auteur" id="nom_auteur" >
+       </div>
+
+       <div  class="group">
+         <label for="">Biographie de l'auteur</label>
+         <textarea name="biographie_auteur" id="biographie_auteur" cols="50" rows="10"></textarea>
+       </div>
+         
         <input type="submit" id=" enregistrer" value="enregistrer">
      
       </form>

@@ -1,3 +1,39 @@
+ <?php
+  session_start();
+  $connexion=mysqli_connect ('localhost','root', '','librairie');
+   if(!$connexion){
+    die('erreur de connexion');
+   }
+ 
+   if(!empty($_SESSION['admin_id'])){
+     $sessionAdmin = $_SESSION['admin_id'];
+ 
+     $select="SELECT * FROM admin WHERE id = '$sessionAdmin'";
+     $requet=mysqli_query($connexion,$select);
+     $recup=mysqli_fetch_assoc($requet);
+    
+
+     if($recup){
+         // var_dump($recup);
+
+       $affiche="SELECT* FROM livres WHERE id_admin=$sessionAdmin";
+       $query=mysqli_query($connexion,$affiche);
+
+       if($query){
+       $adminLivre=mysqli_fetch_all($query,MYSQLI_ASSOC);
+      //  var_dump($adminLivre);
+
+       }
+
+     }else{
+         die("utilisateur inconnu");
+     }
+ 
+   }else{
+     header('LOCATION:../php/connexion.php');
+   }
+ ?>
+ 
  <?php?>
 
 <!DOCTYPE html>
@@ -18,6 +54,7 @@
                <ul>
                    <li> <a href="./index.php">Accueil</a></li>
                     <li><a href="./article.php">tableau-bord</a></li>
+                    <li><a href="./deconnexion.php">Deconnexion</a></li>
                   <!-- <li><a href="">Categorie+</a>
                         <ul>
                            <li><a href="">lorem</a></li>
@@ -61,25 +98,31 @@
                <th>Nbpages</th>
                <th>Description</th>
                <th>Categorie</th>
+               <th>Nom auteur</th>
+               <th>Biographie de l'auteur</th>
                <th>Action</th>
             </tr>
           </thead>
           <tbody>
+            <?php foreach($adminLivre as $value):?>
             <tr>
-              <td>l'alchimiste</td>
-              <td><img src="../image/bien-être-compressor.jpeg" alt="vjkcfjnv" width="150px"></td>
-              <td>20522</td>
-              <td>parru le 05</td>
-              <td>200px</td>
-              <td>jnk,nk</td>
-              <td>maison</td>
+              <td><?php echo $value['nom'];?></td>
+              <td><img src="<?php echo $value['image'];?>" alt="vjkcfjnv" width="150px"></td>
+              <td><?php echo $value['prix'];?></td>
+              <td><?php echo $value['date_parution'];?></td>
+              <td><?php echo $value['nombre_page'];?></td>
+              <td><?php echo $value['resume'];?></td>
+              <td><?php echo $value['id_categorie'];?></td>
+              <td><?php echo $value['nom_auteur'];?></td>
+              <td><?php echo $value['biograthie_auteur'];?></td>
               <td>
                 <div class="action">
-                  <a href="" style="margin-right:10px ;">Editer</a>
-                  <a href="">Suprimer</a>
+                  <a href="./modifier.php?id-modifier=<?php echo $value['id'];?>">Editer</a>
+                  <a href="./suprimer.php?id-livres=<?php echo $value['id'];?>">Suprimer</a>
                 </div>
               </td>
             </tr>
+            <?php endforeach;?>
           </tbody>
          </table>
       </div>
