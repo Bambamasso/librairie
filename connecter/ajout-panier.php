@@ -66,7 +66,7 @@ if(!empty($_GET['id_livres'])){
 
                 # Si l'ajout se passe bien on affiche un message de succès
                 if(mysqli_affected_rows($connexion)>0){
-                    echo'fbkjg';
+                    // echo'fbkjg';
                     header('Location: ./panier.php');
                 }else{
                     # Sinon affiche une erreur
@@ -74,10 +74,13 @@ if(!empty($_GET['id_livres'])){
                     die();
                 }
             }else{
-                $selctLivre = "INSERT INTO panier(livres_id, prix) VALUES(?, ?)";
+                $quantite=1;
+                $selctLivre = "INSERT INTO panier(livres_id, prix, quantite,user_id) VALUES(? ,? ,?, ?)";
                 $prte = mysqli_prepare($connexion, $selctLivre);
-                $query = mysqli_stmt_bind_param($prte, "ii", $id_livres, $livres['prix']);
+                $query = mysqli_stmt_bind_param($prte, "idii", $id_livres, $livres['prix'],$quantite,$sessionUserId);
                 mysqli_stmt_execute($prte);
+
+              
 
                 # Si l'ajout se passe bien on affiche un message de succès
                 if(mysqli_affected_rows($connexion)>0){

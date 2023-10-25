@@ -287,7 +287,7 @@ color: #2A87DD;
     /* overflow-x: auto; */
     justify-content: center;
     width: 100%;
-    max-width: 1300px;
+    max-width: 1700px;
     /* border: 1PX solid yellow; */
      margin: 20px auto; 
    }
@@ -298,7 +298,7 @@ color: #2A87DD;
         box-shadow: 0px 0px 5px 1px #aaa;
         border-radius: 2px;
         background-color: #fff; */
-        width: 320px;
+        width: 250px;
         text-align: center;
         margin-left: 30px;
         margin-top: 10px;
@@ -309,7 +309,7 @@ color: #2A87DD;
 
 .livres .livre img{
     height: 250px;
-    width: 250px;
+    width: 200px;
     margin-top: 10px;
    transition: transform 0.25;
 

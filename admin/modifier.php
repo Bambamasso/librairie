@@ -51,7 +51,7 @@ $connexion=mysqli_connect ('localhost','root', '','librairie');
   if(!empty($_POST['livre'])&& !empty($_POST['prix']) && !empty($_POST['img-url']) && !empty($_POST['apparution']) && !empty($_POST['nbpage']) && !empty($_POST['description']) && !empty($_POST['categorie']) && !empty($_POST['nom_auteur'])&& !empty($_POST['biographie_auteur'])){
    
     $livre=$_POST['livre'];
-    $prix=$_POST['prix'];
+    $prix=$_POST['prix']; 
     $img_url=$_POST['img-url'];
     $apparution=$_POST['apparution'];
     $nbpage=$_POST['nbpage'];
@@ -59,20 +59,35 @@ $connexion=mysqli_connect ('localhost','root', '','librairie');
     $categorie=$_POST['categorie'];
     $nom_auteur=$_POST['nom_auteur'];
     $biographie_auteur=$_POST['biographie_auteur'];
+    $id_admin = $sessionAdmin;
     // $id_admin = $sessionAdmin;
 
-    $modifier="UPDATE livres SET nom= '$livre' , prix= '$prix',image= '$img_url' , date_parution= '$apparution', nombre_page=' $nbpage' , resume=' $description', id_categorie='$categorie', nom_auteur='$nom_auteur',biograthie_auteur=' $biographie_auteur'" ;
-    $requete2=mysqli_query($connexion,$modifier);
+    $modifier="UPDATE livres SET nom= ? , prix = ? ,image= ? , date_parution=? , nombre_page=? , resume=?, id_categorie=?, nom_auteur=?,biograthie_auteur=?,id_admin=?  WHERE id=?" ;
+    $requete2=mysqli_prepare($connexion,$modifier);
+    // $nom_auteur=$_POST['nom_auteur'];
+    $query=mysqli_stmt_bind_param($requete2,"sssssssssii",$livre,$prix, $img_url,$apparution ,$nbpage,$description, $categorie,$nom_auteur,$biographie_auteur,  $id_admin , $id_modifier );
+    mysqli_stmt_execute($requete2);
 
-    if($requete2){
-      $selection="INSERT * FROM livres WHERE id='$id_modifier'";
-      $requete=mysqli_query($connexion,$selection);
-      $article=mysqli_fetch_assoc($requete);
-      echo "modification validé";
+    if(mysqli_affected_rows($connexion)>0){
+      echo "bffgn";
     }else{
-      echo"erreur";
-      // die(mysqli_stmt_error($article));
+    
+      // die("mysqli_stmt_error($connexion)");
     }
+     if($requete2){
+    
+       $selection="INSERT * FROM livres WHERE id=? ";
+       $requete=mysqli_query($connexion,$selection);
+      if($requete){
+        echo"bgbfb";
+        $article=mysqli_fetch_assoc($requete);
+        echo "modification validé";
+        var_dump($article);
+      }
+     }else{
+       echo"erreur";
+        die(mysqli_stmt_error($result));
+     }
   }
  }
 ?>

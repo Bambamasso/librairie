@@ -1,3 +1,17 @@
+<?php
+
+$connexion=mysqli_connect ('localhost','root', '','librairie');
+
+$selection="SELECT *FROM categorie ";
+$execute=mysqli_query($connexion,$selection);
+if($execute){
+  // echo "selection validé";
+  $affiches=mysqli_fetch_all($execute,MYSQLI_ASSOC);
+//   var_dump($affiches);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,10 +32,9 @@
                    <li><a href="">Contact</a></li>
                    <li><a href="">Categorie+</a>
                         <ul>
-                            <li><a href="./categorie-croissance.php">Croissance personnel</a></li>
-                            <li><a href="./categorie-humain.php">Psychologie et comportement humain</a></li>
-                            <li><a href="./categorie-motivation.php">Motivation-Inspiration</a></li>
-                            <li><a href="./categorie-confiance.php">Confience en soi</a></li>
+                        <?php foreach($affiches as $value) :?>
+                            <li><a href="./categories.php?id=<?php echo $value['id'];?>"><?php echo $value['type'];?></a></li>
+                            <?php endforeach;?>
                               <!-- <li><a href="">lorem</a></li> -->
                         </ul>
 

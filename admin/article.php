@@ -114,7 +114,7 @@
         <h3>Ajouter un nouveaux livre </h3>
        <div class="group">
          <label for="">Nom du livre</label>
-         <input type="text" name="livre" id=" livre" placeholder="livre">
+         <input type="text" name="livre" id=" livre" placeholder="">
        </div>
         
        <div class="group">

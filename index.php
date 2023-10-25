@@ -13,6 +13,14 @@
     // var_dump($affiches);
  }
 
+
+ $selecte="SELECT* FROM livres LIMIT 4 ";
+ $rqt=mysqli_query($connexion,$selecte);
+ if($rqt){
+     // echo "validé";
+     $result=mysqli_fetch_all($rqt, MYSQLI_ASSOC);
+     // var_dump($result);
+ }
 ?>
 
 <!DOCTYPE html>
@@ -91,47 +99,14 @@
     <div class="populaire">
         <h2>Les livre de développement personnel les plus populaire</h2>
         <div class="livres">
+        <?php foreach($result as $value):?>
             <div class="livre">
-                 <img src="" alt="">
-                 <p>Lorem</p>
-                  <p>Prix</p>
-                <button type="submit"><a href="./php/voir.php">voir le produit</a></button>
+                 <img src="<?php echo $value['image']?>" alt="">
+                 <p><?php echo $value['nom']?></p>
+                  <p><?php echo $value['prix']?>fcfa</p>
+                <button type="submit"><a href="./php/voir.php?id=<?php echo $value['id']?>">voir le produit</a></button>
             </div>
-
-            <div class="livre">
-                <img src="" alt="">
-                <p>Lorem</p>
-                <p>Prix</p>
-                <button type="submit"><a href="./php/voir.php">voir le produit</a></button>
-            </div>
-
-            <div class="livre">
-                <img src="" alt="">
-                <p>Lorem</p>
-                <p>Prix</p>
-                <button type="submit"><a href="./php/voir.php">Voir le produit</a></button>
-            </div>
-
-            <div class="livre">
-                <img src="" alt="">
-                <p>Lorem</p>
-                <p>Prix</p>
-                <button type="submit"><a href="./php/voir.php">Voir le produit</a></button>
-            </div>
-
-            <div class="livre">
-                <img src="" alt="">
-                <p>Lorem</p>
-                <p>Prix</p>
-                <button type="submit"><a href="./php/voir.php">Voir le produit</a></button>
-            </div>
-
-            <div class="livre">
-                <img src="" alt="">
-                <p>Lorem</p>
-                <p>Prix</p>
-                <button type="submit"><a href="./php/voir.php">Voir de produit</a></button>
-            </div>
+            <?php endforeach;?>
         </div>
     </div>
  </section>

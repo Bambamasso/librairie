@@ -42,6 +42,14 @@ if(!empty($_GET['id'])){
   }
 }
 
+# Selection du nombre de paniers dans la bd
+$nb_sql = "SELECT COUNT(*) AS total FROM panier WHERE user_id='$sessionUserId'";
+$nb_query = mysqli_query($connexion, $nb_sql);
+if ($nb_query) {
+    $nb_panier = mysqli_fetch_assoc($nb_query);
+    $nb_panier = $nb_panier['total'];
+}
+
 
 
 ?>
@@ -82,7 +90,7 @@ if(!empty($_GET['id'])){
             <ul>
              <li><?php echo "Salue".' ' .$recup['nom'];?></li>
               <li><a href="./profile.php">Profile</a></li>
-              <li><a href="../php/panier.php"><img src="../image/panier.png" alt=""></a></li>
+              <li><a href="./panier.php"><img src="../image/panier.png" alt=""><span class="number"><?php echo $nb_panier ?? 0; ?></span></a></li>
               <!-- <a href="./php/connexion.php"> Profile<img src="../image/user.png" alt=""></a>
               <a href="./panier.php"><img src="../image/panier.png" alt=""></a> -->
             </ul>
@@ -102,7 +110,7 @@ if(!empty($_GET['id'])){
              <p class="auteur"><?php echo $value['nom_auteur'];?> <span>(Auteur)</span></p>
              <p class="page"> <?php echo $value['nombre_page'];?>, <?php echo $value['date_parution'];?></p>
              <div class="prix">
-              <p>Prix:<?php echo $value['prix'];?></p>
+              <p>Prix:<?php echo $value['prix'];?>fcfa</p>
              </div>
              <div class="button"><a href="./ajout-panier.php?id_livres=<?php echo $value['id']; ?>" style="text-decoration: none; color: white;">Ajouter au panier<a></div>
           </div>

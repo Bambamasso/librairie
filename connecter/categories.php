@@ -54,6 +54,14 @@ if($execute){
    
  }
 
+ # Selection du nombre de paniers dans la bd
+$nb_sql = "SELECT COUNT(*) AS total FROM panier WHERE user_id='$sessionUserId'";
+$nb_query = mysqli_query($connexion, $nb_sql);
+if ($nb_query) {
+    $nb_panier = mysqli_fetch_assoc($nb_query);
+    $nb_panier = $nb_panier['total'];
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -92,7 +100,7 @@ if($execute){
             <ul>
              <li><?php echo "Salue".' ' .$recup['nom'];?></li>
               <li><a href="./profile.php">Profile</a></li>
-              <li><a href="../php/panier.php"><img src="../image/panier.png" alt=""></a></li>
+              <li><a href="./panier.php"><img src="../image/panier.png" alt=""><span class="number"><?php echo $nb_panier ?? 0; ?></span></a></li>
               <!-- <a href="./php/connexion.php"> Profile<img src="../image/user.png" alt=""></a>
               <a href="./panier.php"><img src="../image/panier.png" alt=""></a> -->
             </ul>

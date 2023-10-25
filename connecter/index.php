@@ -32,7 +32,24 @@
  }
 
  //selection de la table livre
+
+   $selecte="SELECT* FROM livres LIMIT 4 ";
+    $rqt=mysqli_query($connexion,$selecte);
+    if($rqt){
+        // echo "validé";
+        $result=mysqli_fetch_all($rqt, MYSQLI_ASSOC);
+        // var_dump($result);
+    }
  
+# Selection du nombre de paniers dans la bd
+$nb_sql = "SELECT COUNT(*) AS total FROM panier WHERE user_id='$sessionUserId'";
+$nb_query = mysqli_query($connexion, $nb_sql);
+if ($nb_query) {
+    $nb_panier = mysqli_fetch_assoc($nb_query);
+    $nb_panier = $nb_panier['total'];
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +88,7 @@
             <ul>
                 <li><?php echo "Salue".' ' .$recup['nom'];?></li>
                 <li> <a href="./profile.php">Profile</a></li>
-                <li> <a href="../php/panier.php"><img src="../image/panier.png" alt=""></a></li>
+                <li> <a href="./panier.php"><img src="../image/panier.png" alt=""><span class="number"><?php echo $nb_panier ?? 0; ?></span></a></li>
             </ul>
         </div>
     </nav>
@@ -97,33 +114,10 @@
          <?php foreach ($affiches as $value) :?>
          <div class="article">
              <img src=" <?php echo $value['image'];?>" alt="">
-             <p><a href=""><?php echo $value['type'] ;?></a></p>
+             <p><a href="./categories.php?id=<?php echo $value['id'];?>"><?php echo $value['type'] ;?></a></p>
           </div>
           <?php endforeach ;?>
-          <!-- <div class="article">
-             <img src="./image/les_lois_de_la_nature_humaines-5008931-264-432.jpeg" alt="">
-             <p><a href="">Psychologie et Comportement humain</a></p>
-          </div> -->
-
-          <!-- <div class="article">
-             <img src="./image/corps-n-oublie-rien.jpeg" alt="">
-             <p><a href="">Santé et bien-être</a></p>
-         </div> -->
-
-         <!-- <div class="article">
-             <img src="./image/le_manifeste_de_la_motivation-1250691-264-432.jpeg" alt="">
-             <p><a href="">Motivation-Inspiration</a></p>
-         </div> -->
-
-         <!-- <div class="article">
-             <img src="./image/developement des competeces.png" alt="">
-             <p><a href="">Développement des competence</a></p>
-         </div> -->
-
-         <!-- <div class="article">
-             <img src="./image/livres-apprendre-a-avoir-confiance-en-soi.webp" alt="">
-             <p><a href="">Confience en soi</a></p>
-         </div> -->
+         
         </div>
 
     </div>
@@ -136,47 +130,17 @@
     <div class="populaire">
         <h2>Les livre de développement personnel les plus populaire</h2>
         <div class="livres">
+            <?php foreach($result as $value):?>
             <div class="livre">
-                 <img src="" alt="">
-                 <p>Lorem</p>
-                  <p>Prix</p>
-                <button type="submit"><a href="./voir.php">voir le produit</a></button>
+                 <img src="<?php echo $value['image']?>" alt="">
+                 <p><?php echo $value['nom']?></p>
+                  <p><?php echo $value['prix']?>fcfa</p>
+                <button type="submit"><a href="./voir.php?id=<?php echo $value['id']?>">voir le produit</a></button>
             </div>
+            <?php endforeach;?>
+           
 
-            <div class="livre">
-                <img src="" alt="">
-                <p>Lorem</p>
-                <p>Prix</p>
-                <button type="submit"><a href="./voir.php">voir le produit</a></button>
-            </div>
-
-            <div class="livre">
-                <img src="" alt="">
-                <p>Lorem</p>
-                <p>Prix</p>
-                <button type="submit"><a href="./voir.php">Voir le produit</a></button>
-            </div>
-
-            <div class="livre">
-                <img src="" alt="">
-                <p>Lorem</p>
-                <p>Prix</p>
-                <button type="submit"><a href="./voir.php">Voir le produit</a></button>
-            </div>
-
-            <div class="livre">
-                <img src="" alt="">
-                <p>Lorem</p>
-                <p>Prix</p>
-                <button type="submit"><a href="./voir.php">Voir le produit</a></button>
-            </div>
-
-            <div class="livre">
-                <img src="" alt="">
-                <p>Lorem</p>
-                <p>Prix</p>
-                <button type="submit"><a href="./voir.php">Voir de produit</a></button>
-            </div>
+            
         </div>
     </div>
  </section>
