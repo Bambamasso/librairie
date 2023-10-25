@@ -68,8 +68,8 @@ if($execute){
         <div class="gauche">
            <input type="search" placeholder="recherhce..">
           <ul>
-            <li><a href="./php/connexion.php"><img src="../image/user.png" alt=""></a></li>
-            <li> <a href="./php/panier.php"><img src="../image/panier.png" alt=""></a></li>
+            <li><a href="./connexion.php"><img src="../image/user.png" alt=""></a></li>
+            <li> <a href="./connexion.php"><img src="../image/panier.png" alt=""></a></li>
           </ul>
         </div>
     </nav>

@@ -47,7 +47,7 @@
 <body>
     <nav class="nav">
         <div class="onglets">
-           <p class="logo"><img src="./image/Capture_d_écran_2023-10-05_à_14.35.01-removebg-preview.png" width="50px" alt=""></p>
+           <p class="logo"><img src="../image/Capture_d_écran_2023-10-05_à_14.35.01-removebg-preview.png" width="100px" alt=""></p>
            <input type="checkbox" id="barre">
            <label for="barre">Menu</label>
            <div class="droit">

@@ -62,7 +62,7 @@ if ($nb_query) {
                  <li><a href="">Categorie+</a>
                       <ul>
                         <?php foreach($affiches as $value) :?>
-                        <li><a href="../php/categorie-croissance.php"><?php echo $value['type'];?></a></li>
+                        <li><a href="./categories.php"><?php echo $value['type'];?></a></li>
                         
                         <?php endforeach;?>
                       </ul>

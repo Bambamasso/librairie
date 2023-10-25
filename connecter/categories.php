@@ -49,7 +49,7 @@ if($execute){
         
          $categorie =mysqli_fetch_all($requet2,MYSQLI_ASSOC );
 
-        //  var_dump($categorie);
+          var_dump($categorie);
      }
    
  }

@@ -6,7 +6,8 @@ body{
     min-height: 100vh;
     flex-direction: column;
     overflow-x: hidden;
-    /* background: url(../../image/developpement-personel-livres.webp); */
+    background: url(../../image/ACT-Litteratie-01.jpeg);
+    height: auto;
     background-size: cover;
     background-repeat:no-repeat;
     /* background-position: center; */
@@ -142,9 +143,10 @@ box-sizing: border-box;
  .section2{
   width: 100%;
   position: absolute;
-  top: 100px;
+  top: 150px;
   display: flex;
   justify-content: center;
+ 
  }
 
  .section2 .livres{
@@ -155,6 +157,13 @@ box-sizing: border-box;
     width: 100%;
     max-width: 1200px;
  }
+.livres h3{
+    font-size: 30px;
+    font-family:'Inter', sans-serif ;
+    text-decoration: underline;
+    color:#100F27 ;
+    text-align: center;
+}
 
  .livres form{
     width: 100%;
@@ -170,8 +179,14 @@ box-sizing: border-box;
  }
 
  .livres form label {
-   color:#081B48 ;
+   color:#100F27 ;
    width: fit-content;
+   font-family:'Inter', sans-serif ;
+
+ }
+
+ .livres textarea,select{
+    opacity: 0.7;
  }
 
  .livres form input {
@@ -180,6 +195,9 @@ box-sizing: border-box;
    border: 1px solid ;
    padding: 10px;
    resize: none;
+    opacity: 0.7;
+   
+   /* background: rgb(180, 182, 183); */
   }
 
   .livres form input[type='submit']{
@@ -194,6 +212,10 @@ box-sizing: border-box;
     background: #2A87DD;
     color: white;
     text-align: center;
+    opacity: 1;
+    margin-bottom: 50px;
+    border: none;
+    font-family:'Inter', sans-serif ;
 
   }
 
