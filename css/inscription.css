@@ -14,8 +14,8 @@ box-sizing: border-box;
     position: fixed;
     justify-content: space-between;
     align-items: center;
-    background: #2A87DD;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; 
+    background: #8aec89;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
     z-index: 1;
 
 }
@@ -23,13 +23,13 @@ box-sizing: border-box;
  .onglets{
    display: flex;
    align-items: center;
-   
+
 }
 /* .onglets .droit*/
 
 .droit ul{
     list-style-type: none;
-   
+
 }
 .droit ul li{
    position:relative ;
@@ -42,20 +42,20 @@ box-sizing: border-box;
 }
 .droit a{
  text-decoration: none;
- color: white;
+ color: #010101;
  font-family: 'Inter', sans-serif;
 }
 .droit a:hover{
     color:#8ABC76;
  }
- 
+
 .gauche{
     display: flex;
     align-items: center;
 }
 
 .gauche a{
-    margin-right: 50px; 
+    margin-right: 50px;
 }
 .gauche input{
    width: 300px;
@@ -63,7 +63,6 @@ box-sizing: border-box;
    border-radius:5px;
    border: none;
    outline: none;
-   background: white;
 
 }
 
@@ -71,19 +70,18 @@ box-sizing: border-box;
     position: absolute;
     left: 0;
     width: 260px;
-    background: #2A87DD;
+    background: #8aec89;
     display: none;
 }
 
 .droit ul li ul li{
     width: 100%;
-    border-top: 1px solid greenyellow;
+    border-top: 1px solid white;
+}
+.droit ul li ul li a{
+    font-size: 16px;
 }
 
-.droit ul li ul li a{
-   font-size: 16px;
-   font-family: 'Inter', sans-serif;
-}
 .droit ul li ul li ul{
     left: 200px;
     top: 0px;
@@ -101,21 +99,20 @@ box-sizing: border-box;
     color: white;
     font-size: 20px;
     font-family: 'Inter', sans-serif;
-
 }
 /* responsivité */
 
 @media(max-width:947px){
-  
+
     .onglets label{
         display: block;
-    } 
+    }
     .onglets .droit{
         position: absolute;
         top: 100%;
         left: 0px;
         right: 0px;
-        background: #2A87DD;
+        background: #8aec89AE;
         display: none;
     }
 
@@ -127,7 +124,7 @@ box-sizing: border-box;
         width: 100%;
     }
     .onglets .droit ul li ul li{
-       background: rgb(138, 138, 241);
+       background: #8aec89;
     }
     .onglets .droit ul li ul li ul{
         width: 100%;
@@ -138,6 +135,8 @@ box-sizing: border-box;
         display: initial;
     }
 }
+ /* fin de responsivité */
+
 /* partie des cadre */
 .inscription{
     width: 100%;
@@ -176,7 +175,7 @@ background-position: center;
     text-align: center;
     font-size: 20px;
     font-family: 'Inter', sans-serif;
-    color: white;
+    color: #010c37;
     margin-top: 250px;
 }
 
@@ -200,6 +199,7 @@ form .logo{
     margin-bottom: 20px;
 }
 label{
+    color: #010c37;
     font-family: 'Inter', sans-serif;
 }
 
@@ -215,25 +215,25 @@ input{
 }
 #submit{
     border: none;
-    background: #2A87DD;
-    color: white;
+    background: #8aec89;
+    color: #010c37;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 20px; 
+    border-radius: 5px;
 }
-/* debut footer */
-
-footer{
+   /* debut footer */
+   footer{
     width: 100%;
     position:relative;
-    top: 900px;
+    top: 800px;
+    background: #8AEC89;
 }
 footer .info{
-    width: 100%;
+    /* width: 100%; */
     height: auto;
-    background: #2A87DD;
     display: flex;
-    justify-content: center;
+     justify-content: center;
     flex-wrap: wrap;
 }
 footer .info .livraison{
@@ -241,12 +241,12 @@ footer .info .livraison{
    width: 120px;
    margin-top: 10px;
    margin-bottom: 20px;
-     
+
 }
 .livraison p{
     /* text-align: center; */
     font-size: 18px;
-    color: white;
+    color: #010c37;
     font-family: 'Inter', sans-serif;
 }
 
@@ -255,41 +255,43 @@ footer .info .livraison{
     margin-left: 20px;
 }
 
-.adresse{
+footer .contact{
+    width: 100%;
+    max-width: 1500px;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.reseaux{
-    display: flex;
-}
-.reseaux .img{
-   margin-left: 10px;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
+/* .contact .contacte{
 
-.navigation{
+} */
+
+.contact .contacte h1{
+  font-size: 35px;
+  font-family: 'Inter', sans-serif;
+  color: #010c37;
+  margin-bottom: 5px;
+}
+.contacte p{
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    color: #010c37;
+}
+
+footer .adresses{
+   margin-left: 80px;
+}
+footer .adresse{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    /* justify-content: center; */
+}
+footer .adresse p{
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    color: #010c37;
     margin-left: 10px;
-   
 }
-.navigation ul li{
-   list-style-type: none;
-   margin-bottom: 10px;
-   font-family: 'Inter', sans-serif;
-   color: #2A87DD;
-   font-size: 18px;
-   /* text-align: center; */
-}
-
-.navigation h3{
-     text-align: center;
-    text-decoration: underline;
-    color: #2A87DD;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-
-
-
-

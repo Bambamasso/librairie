@@ -86,13 +86,12 @@ if ($nb_query) {
               </div>
          </div>
           <div class="gauche">
-              <input type="search" placeholder="recherhce.."> 
+              <!-- <input type="search" placeholder="recherhce..">  -->
             <ul>
-             <li><?php echo "Salue".' ' .$recup['nom'];?></li>
-              <li><a href="./profile.php">Profile</a></li>
+             <li></li>
+              <li>Salue <a href="./profile.php"> <?php echo $recup['nom'];?></a></li>
               <li><a href="./panier.php"><img src="../image/panier.png" alt=""><span class="number"><?php echo $nb_panier ?? 0; ?></span></a></li>
-              <!-- <a href="./php/connexion.php"> Profile<img src="../image/user.png" alt=""></a>
-              <a href="./panier.php"><img src="../image/panier.png" alt=""></a> -->
+             
             </ul>
           </div>
       </nav>
@@ -110,9 +109,9 @@ if ($nb_query) {
              <p class="auteur"><?php echo $value['nom_auteur'];?> <span>(Auteur)</span></p>
              <p class="page"> <?php echo $value['nombre_page'];?>, <?php echo $value['date_parution'];?></p>
              <div class="prix">
-              <p>Prix:<?php echo $value['prix'];?>fcfa</p>
+              <p style="color:#2605CC;">Prix:<?php echo $value['prix'];?>fcfa</p>
              </div>
-             <div class="button"><a href="./ajout-panier.php?id_livres=<?php echo $value['id']; ?>" style="text-decoration: none; color: white;">Ajouter au panier<a></div>
+             <div class="button"><a href="./ajout-panier.php?id_livres=<?php echo $value['id']; ?>" style="text-decoration: none; color: #010c37;">Ajouter au panier<a></div>
           </div>
           <div class="graph">
             <h2 class="nom"><?php echo $value['nom_auteur'];?> <span>(Auteur)</span></h2>
@@ -133,5 +132,46 @@ if ($nb_query) {
          <?php endforeach;?>
       </div>
   </section>
+  <footer>
+    <div class="info">
+      <div class="livraison">
+        <img src="../image/fast-delivery.png" alt="7542154"  width="50px" >
+        <p>Livraison sous 24h/48h</p>
+      
+      </div>
+      <div class="livraison">
+        <img src="../image/atm.png" alt="7542154" width="50px">
+        <p>Retrait gratuit en librairie</p>
+      </div>
+      <div class="livraison">
+      <img src="../image/credit-card.png" alt="7542154"  width="50px">
+        <p>Paiement securisé</p>
+      </div>
+      <div class="livraison">
+          <img src="../image/24-hours-support.png" alt="7542154" width="50px" >
+          <p>Service client de 9h à 17h</p>
+      </div>
+    </div>
+   <div class="contact">
+      <div class="contacte">
+        <h1>Contactez-nous</h1>
+        <p>Vous avez des question où des préocupations <br> svp contactez-nous </p>
+      </div>
+      <div class="adresses">
+        <div class="adresse">
+          <div><img src="../image/telephone-handle-silhouette (1).png" alt="n"></div>
+          <div><p>+2250102431214</p></div>
+        </div>
+        <div class="adresse">
+          <div><img src="../image/email (1).png" alt="n"></div>
+          <div><p>bambamasso51gmail.com</p></div>
+        </div>
+        <div class="adresse">
+          <div><img src="../image/maps-and-flags.png" alt="n" width="30px"></div>
+          <div><p>Abidjan, Abobo biabou</p></div>
+        </div>
+      </div>
+   </div>
+</footer>
 </body>
 </html>

@@ -1,17 +1,19 @@
 <?php
 
  session_start();
+
+  $connexion=mysqli_connect ('localhost','root', '','librairie');
+  if(!$connexion){
+  die('erreur de connexion');
+ }
  if(!empty($_POST['email']) && !empty($_POST['motDePasse'])){
    
-    $email=$_POST['email'];
-    $motDePasse= $_POST['motDePasse'];
+    $email=($_POST['email']);
+    $motDePasse= ($_POST['motDePasse']);
 
      //connexion à la base de donnée
-     $connexion=mysqli_connect ('localhost','root', '','librairie');
-     if(!$connexion){
-      die('erreur de connexion');
-     }
-
+    
+   
      $select="SELECT * FROM users WHERE email='$email' && motPasse='$motDePasse'";
       $requet=mysqli_query($connexion,$select);
       if($requet){
@@ -40,15 +42,15 @@
         }
           }
     }
-      //admin
-      else{
-        
-       
-      }
-      
-
  }
  
+ $selection="SELECT *FROM categorie ";
+ $execute=mysqli_query($connexion,$selection);
+ if($execute){
+  //  echo "selection validé";
+   $affiches=mysqli_fetch_all($execute,MYSQLI_ASSOC);
+ //   var_dump($affiches);
+ }
 
 ?>
 
@@ -72,11 +74,10 @@
                    <li><a href="">Contact</a></li>
                    <li><a href="">Categorie+</a>
                         <ul>
-                            <li><a href="./categorie-croissance.php">Croissance personnel</a></li>
-                            <li><a href="./categorie-humain.php">Psychologie et comportement humain</a></li>
-                            <li><a href="./categorie-motivation.php">Motivation-Inspiration</a></li>
-                            <li><a href="./categorie-confiance.php">Confience en soi</a></li>
-                              <!-- <li><a href="">lorem</a></li> -->
+                        <?php foreach($affiches as $value) :?>
+                            <li><a href="./categories.php?id=<?php echo $value['id'];?>"><?php echo $value['type'];?></a></li>
+                            <?php endforeach;?>
+                           <!-- <li><a href="">lorem</a></li> -->
                         </ul>
   
                       </li>
@@ -85,9 +86,9 @@
               </div>
          </div>
           <div class="gauche">
-             <input type="search" placeholder="recherhce..">
+             <!-- <input type="search" placeholder="recherhce.."> -->
             <ul>
-              <a href="./php/connexion.php"><img src="../image/user.png" alt=""></a>
+              <a href="./connexion.php"><img src="../image/user.png" alt=""></a>
              <a href=""><img src="../image/panier.png" alt=""></a>
             </ul>
           </div>
@@ -140,36 +141,26 @@
             <p>Service client de 9h à 17h</p>
         </div>
     </div>
-    <div class="adresse">
-        <div class="navigation">
-            <h3>Suivez-nous sur:</h3>
-            <div class="reseaux">
-                <div class="img"><img src="../image/facebook.png" alt=""></div>
-                <div  class="img"><img src="../image/instagram.png" alt=""></div>
-                <div  class="img"><img src="../image/tiktok.png" alt=""></div>
-                <div  class="img"><img src="../image/twitter.png" alt=""></div>
-            </div>
-       </div>
-       <div class="navigation">
-        <h3>Navigation</h3>
-           <ul>
-            <li>Acceuil</li>
-            <li>Contact</li>
-            <li>Catégories</li>
-           </ul>
-       </div>
-       <div class="navigation">
-        <h3>Categorie</h3>
-        <ul>
-            <li>Croissance personnel</li>
-            <li>Psychologie et Comprtement humain</li>
-            <li>Santé et bien-être</li>
-            <li>Motivation-Inspiration</li>
-            <li>Dévelppement Competence</li>
-            <li>Confience en soi</li>
-           </ul>
-       </div>
-    </div>
+    <div class="contact">
+      <div class="contacte">
+        <h1>Contactez-nous</h1>
+        <p>Vous avez des question où des préocupations <br> svp contactez-nous </p>
+      </div>
+      <div class="adresses">
+        <div class="adresse">
+          <div><img src="../image/telephone-handle-silhouette (1).png" alt="n"></div>
+          <div><p>+2250102431214</p></div>
+        </div>
+        <div class="adresse">
+          <div><img src="../image/email (1).png" alt="n"></div>
+          <div><p>bambamasso51gmail.com</p></div>
+        </div>
+        <div class="adresse">
+          <div><img src="../image/maps-and-flags.png" alt="n" width="30px"></div>
+          <div><p>Abidjan, Abobo biabou</p></div>
+        </div>
+      </div>
+   </div>
 </footer>
 
 </body>

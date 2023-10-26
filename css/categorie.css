@@ -13,7 +13,7 @@ box-sizing: border-box;
     position: fixed;
     justify-content: space-between;
     align-items: center;
-    background: #2A87DD;
+    background: #8aec89;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; 
     z-index: 1;
 
@@ -41,7 +41,7 @@ box-sizing: border-box;
 }
 .droit a{
  text-decoration: none;
- color: white;
+ color: #010c37;
  font-family: 'Inter', sans-serif;
 }
 .droit a:hover{
@@ -67,11 +67,11 @@ box-sizing: border-box;
        margin-right: 50px; 
        font-size: 18px;
        font-family: 'Inter', sans-serif;
-       color: white;
+       color: #010c37;
    }
    .gauche a{
        text-decoration: none;
-      color: white;}
+      color: #010c37;}
 
 .gauche input{
    width: 300px;
@@ -86,13 +86,13 @@ box-sizing: border-box;
     position: absolute;
     left: 0;
     width: 260px;
-    background: #2A87DD;
+    background: #8aec89;
     display: none;
 }
 
 .droit ul li ul li{
     width: 100%;
-    border-top: 1px solid greenyellow;
+    border-top: 1px solid white;
     font-size: 8px;
 }
 .droit ul li ul li a{
@@ -129,7 +129,7 @@ box-sizing: border-box;
         top: 100%;
         left: 0px;
         right: 0px;
-        background: #2A87DD;
+        background: #010c37;
         display: none;
     }
 
@@ -178,7 +178,7 @@ box-sizing: border-box;
 
    .populaire h2{
      text-align: center;
-     color: #2A87DD;
+     color: #010c37;
      font-family: 'Inter', sans-serif;
      font-size: 35px;
    }
@@ -189,7 +189,7 @@ box-sizing: border-box;
     /* overflow-x: auto; */
     justify-content: center;
     width: 100%;
-    max-width: 1300px;
+    max-width: 1700px;
     /* border: 1PX solid yellow; */
      margin: 20px auto; 
    }
@@ -200,7 +200,7 @@ box-sizing: border-box;
         box-shadow: 0px 0px 5px 1px #aaa;
         border-radius: 2px;
         background-color: #fff; */
-        width: 320px;
+        width: 250px;
         text-align: center;
         margin-left: 30px;
         margin-top: 10px;
@@ -211,7 +211,7 @@ box-sizing: border-box;
 
 .livres .livre img{
     height: 250px;
-    width: 250px;
+    width: 200px;
     margin-top: 10px;
    transition: transform 0.25;
 
@@ -224,20 +224,20 @@ box-sizing: border-box;
 .livre p a{
 text-decoration: none;
 font-family: 'Inter', sans-serif;
-color: #2A87DD;
+color: #010c37;
 }
 
 .livre button{
     margin-bottom:20px;
     width: 200px;
     padding: 5px;
-    background: #8ABC76;
+    background: #8Aec89;
     border: none;
 }
 .livre button a{
     text-decoration: none;
     font-family: 'Inter', sans-serif;
-    color: white;
+    color: #010c37;
 }
 /* fin section 3 */
 
@@ -246,13 +246,13 @@ footer{
     width: 100%;
     position:relative;
     top: 500px;
+    background: #8AEC89;
 }
 footer .info{
-    width: 100%;
+    /* width: 100%; */
     height: auto;
-    background: #2A87DD;
     display: flex;
-    justify-content: center;
+     justify-content: center;
     flex-wrap: wrap;
 }
 footer .info .livraison{
@@ -260,12 +260,12 @@ footer .info .livraison{
    width: 120px;
    margin-top: 10px;
    margin-bottom: 20px;
-     
+
 }
 .livraison p{
     /* text-align: center; */
     font-size: 18px;
-    color: white;
+    color: #010c37;
     font-family: 'Inter', sans-serif;
 }
 
@@ -274,37 +274,43 @@ footer .info .livraison{
     margin-left: 20px;
 }
 
-.adresse{
+footer .contact{
+    width: 100%;
+    max-width: 1500px;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.reseaux{
-    display: flex;
-}
-.reseaux .img{
-   margin-left: 10px;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
+/* .contact .contacte{
 
-.navigation{
+} */
+
+.contact .contacte h1{
+  font-size: 35px;
+  font-family: 'Inter', sans-serif;
+  color: #010c37;
+  margin-bottom: 5px;
+}
+.contacte p{
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    color: #010c37;
+}
+
+footer .adresses{
+   margin-left: 80px;
+}
+footer .adresse{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    /* justify-content: center; */
+}
+footer .adresse p{
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    color: #010c37;
     margin-left: 10px;
-   
 }
-.navigation ul li{
-   list-style-type: none;
-   margin-bottom: 10px;
-   font-family: 'Inter', sans-serif;
-   color: #2A87DD;
-   font-size: 18px;
-   /* text-align: center; */
-}
-
-.navigation h3{
-     text-align: center;
-    text-decoration: underline;
-    color: #2A87DD;
-    font-size: 25px;
-    font-weight: bold;
-}
-

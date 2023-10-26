@@ -86,8 +86,8 @@ if ($nb_query) {
         <div class="gauche" >
             <input type="search" placeholder="recherhce..">
             <ul>
-                <li><?php echo "Salue".' ' .$recup['nom'];?></li>
-                <li> <a href="./profile.php">Profile</a></li>
+                <li></li>
+                <li> Salue <a href="./profile.php"><?php echo $recup['nom'];?></a></li>
                 <li> <a href="./panier.php"><img src="../image/panier.png" alt=""><span class="number"><?php echo $nb_panier ?? 0; ?></span></a></li>
             </ul>
         </div>
@@ -98,8 +98,8 @@ if ($nb_query) {
 <section class="section1">
   <div class="header">
      <div class="lesp"> 
-         <p class="p1">Apprendre à gérer ses émotions, trontrolé ses sentiment
-            grace à la magie de la lecture.</p>
+         <p class="p1">Apprendre à Gérer Ses Emotions, Trontrolé Ees Sentiment
+            Grace à La Magie De La Lecture.</p>
          <p class="p2">Laissez-vous guider par nos ouvrages sur le développement personnel.Ils vous apprennent la vie ou vous nourrissent intellectuellement dans le but de cultiver votre bien-être. </p>
      </div>
   </div>
@@ -134,7 +134,7 @@ if ($nb_query) {
             <div class="livre">
                  <img src="<?php echo $value['image']?>" alt="">
                  <p><?php echo $value['nom']?></p>
-                  <p><?php echo $value['prix']?>fcfa</p>
+                  <p  style="color:#2605CC;"><?php echo $value['prix']?>fcfa</p>
                 <button type="submit"><a href="./voir.php?id=<?php echo $value['id']?>">voir le produit</a></button>
             </div>
             <?php endforeach;?>
@@ -167,36 +167,26 @@ if ($nb_query) {
             <p>Service client de 9h à 17h</p>
         </div>
     </div>
-    <div class="adresse">
-        <div class="navigation">
-            <h3>Suivez-nous sur:</h3>
-            <div class="reseaux">
-                <div class="img"><img src="../image/facebook.png" alt=""></div>
-                <div  class="img"><img src="../image/instagram.png" alt=""></div>
-                <div  class="img"><img src="../image/tiktok.png" alt=""></div>
-                <div  class="img"><img src="../image/twitter.png" alt=""></div>
-            </div>
-       </div>
-       <div class="navigation">
-        <h3>Navigation</h3>
-           <ul>
-            <li>Acceuil</li>
-            <li>Contact</li>
-            <li>Catégories</li>
-           </ul>
-       </div>
-       <div class="navigation">
-        <h3>Categorie</h3>
-        <ul>
-            <li>Croissance personnel</li>
-            <li>Psychologie et Comprtement humain</li>
-            <li>Santé et bien-être</li>
-            <li>Motivation-Inspiration</li>
-            <li>Dévelppement Competence</li>
-            <li>Confience en soi</li>
-           </ul>
-       </div>
-    </div>
+    <div class="contact">
+      <div class="contacte">
+        <h1>Contactez-nous</h1>
+        <p>Vous avez des question où des préocupations <br> svp contactez-nous </p>
+      </div>
+      <div class="adresses">
+        <div class="adresse">
+          <div><img src="../image/telephone-handle-silhouette (1).png" alt="n"></div>
+          <div><p>+2250102431214</p></div>
+        </div>
+        <div class="adresse">
+          <div><img src="../image/email (1).png" alt="n"></div>
+          <div><p>bambamasso51gmail.com</p></div>
+        </div>
+        <div class="adresse">
+          <div><img src="../image/maps-and-flags.png" alt="n" width="30px"></div>
+          <div><p>Abidjan, Abobo biabou</p></div>
+        </div>
+      </div>
+   </div>
 </footer>
 </body>
 </html>

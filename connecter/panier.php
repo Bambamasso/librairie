@@ -89,10 +89,10 @@ if ($nb_query) {
               </div>
          </div>
           <div class="gauche">
-             <input type="search" placeholder="recherhce..">
+             <!-- <input type="search" placeholder="recherhce.."> -->
             <ul>
-                <li><?php echo "Salue".' ' .$recup['nom'];?></li>
-                <li> <a href="./profile.php">Profile</a></li>
+                <li></li>
+                <li>salue <a href="./profile.php"> <?php echo $recup['nom'];?></a></li>
                 <li> <a href="./panier.php"><img src="../image/panier.png" alt=""><span class="number"><?php echo $nb_panier ?? 0; ?></span></a></li>
               <!-- <a href="./connexion.php"> Profile</a>
              <a href="./panier.php"><img src="../image/panier.png" alt=""></a> -->
@@ -127,8 +127,8 @@ if ($nb_query) {
                             <span><?php echo $value['nom']; ?></span>
                         </td>
                         <td><input type="number" value="<?php echo $value['quantite'];  ?>" id="livre<?php echo $value['id']; ?>" min="1"></td>
-                        <td>Prix : <?php echo number_format($value['prix'], 2, '.'); ?>fcfa</td>
-                        <td><?php echo number_format(($value['prix'] * $value['quantite']), 2, '.'); ?> fcfa</p></td>
+                        <td style="color:#2605CC;">Prix : <?php echo number_format($value['prix'], 2, '.'); ?>fcfa</td>
+                        <td style="color:#2605CC;"><?php echo number_format(($value['prix'] * $value['quantite']), 2, '.'); ?> fcfa</p></td>
                         <td><i class="fas fa-check" style="color: blue; margin: 0.5em;" onclick="updateCart(event, <?php echo $value['id']; ?>)"></i><i class="fas fa-trash" style="color: red; margin: 0.5em;" onclick="deleteCart(event, <?php echo $value['id']; ?>)"></i></td>
                        <!-- <td><a>suprimer</a></td> -->
 
@@ -155,7 +155,7 @@ if ($nb_query) {
 
                   <div class="prixTotal">
                     <p style="font-size: 20px;" >Total: </p>
-                    <p><?php echo number_format($total, 2, '.'); ?>fcfa</p>
+                    <p style="color:#2605CC;"><?php echo number_format($total, 2, '.'); ?>fcfa</p>
                   </div>
                   <div class="command">
                      <a href="">Commander</a>

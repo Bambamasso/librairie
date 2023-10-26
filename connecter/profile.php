@@ -62,7 +62,7 @@ if ($nb_query) {
                  <li><a href="">Categorie+</a>
                       <ul>
                         <?php foreach($affiches as $value) :?>
-                        <li><a href="./categories.php"><?php echo $value['type'];?></a></li>
+                        <li><a href="./categories.php?id=<?php echo $value['id'];?>"><?php echo $value['type'];?></a></li>
                         
                         <?php endforeach;?>
                       </ul>
@@ -73,10 +73,10 @@ if ($nb_query) {
             </div>
        </div>
         <div class="gauche" >
-            <input type="search" placeholder="recherhce..">
+            <!-- <input type="search" placeholder="recherhce.."> -->
             <ul>
-                <li><?php echo "Salue".' ' .$recup['nom'];?></li>
-                <li> <a href="./profile.php">Profile</a></li>
+                <li></li>
+                <li> Salue <a href="./profile.php"><?php echo  $recup['nom'];?></a></li>
                 <li> <a href="./panier.php"><img src="../image/panier.png" alt=""><span class="number"><?php echo $nb_panier ?? 0; ?></span></a></li>
             </ul>
         </div>
