@@ -170,7 +170,47 @@ if ($nb_query) {
   </section>
 
    <!-- debut du footer -->
- 
+   <footer>
+    <div class="info">
+      <div class="livraison">
+        <img src="../image/fast-delivery.png" alt="7542154"  width="50px" >
+        <p>Livraison sous 24h/48h</p>
+      
+      </div>
+      <div class="livraison">
+        <img src="../image/atm.png" alt="7542154" width="50px">
+        <p>Retrait gratuit en librairie</p>
+      </div>
+      <div class="livraison">
+      <img src="../image/credit-card.png" alt="7542154"  width="50px">
+        <p>Paiement securisé</p>
+      </div>
+      <div class="livraison">
+          <img src="../image/24-hours-support.png" alt="7542154" width="50px" >
+          <p>Service client de 9h à 17h</p>
+      </div>
+    </div>
+   <div class="contact">
+      <div class="contacte">
+        <h1>Contactez-nous</h1>
+        <p>Vous avez des question où des préocupations <br> svp contactez-nous </p>
+      </div>
+      <div class="adresses">
+        <div class="adresse">
+          <div><img src="../image/telephone-handle-silhouette (1).png" alt="n"></div>
+          <div><p>+2250102431214</p></div>
+        </div>
+        <div class="adresse">
+          <div><img src="../image/email (1).png" alt="n"></div>
+          <div><p>bambamasso51gmail.com</p></div>
+        </div>
+        <div class="adresse">
+          <div><img src="../image/maps-and-flags.png" alt="n" width="30px"></div>
+          <div><p>Abidjan, Abobo biabou</p></div>
+        </div>
+      </div>
+   </div>
+</footer>
 </body>
 <script>
     document.addEventListener('scroll', () => {

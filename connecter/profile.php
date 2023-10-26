@@ -86,11 +86,12 @@ if ($nb_query) {
    <main>
      <div class="profile">
             <h3>Profile</h3>
+            <div>
+                    <img src="../image/WhatsApp Image 2023-07-08 at 07.27.20 (1).jpeg" alt="" width="200px">
+                </div>
           <div class="info">
                 <h4>Mes information</h4>
-                <div>
-                    <img src="" alt="">
-                </div>
+               
                 <div>
                     <p class="p">Nom</p>
                     <p><?php echo $recup['nom'];?></p>

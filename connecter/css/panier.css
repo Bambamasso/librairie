@@ -222,6 +222,7 @@ box-sizing: border-box;
     width: 50px;
  }
  .table-panier .validation{
+   
     margin-top: 50px;
    width: 300px;
    height: auto;
@@ -255,3 +256,75 @@ box-sizing: border-box;
    font-family: 'Inter', sans-serif;
 }
 /* debut footer */
+footer{
+    width: 100%;
+    position:absolute;
+    top: 1000px;
+    background: #8AEC89;
+}
+footer .info{
+    /* width: 100%; */
+    height: auto;
+    display: flex;
+     justify-content: center;
+    flex-wrap: wrap;
+}
+footer .info .livraison{
+  margin-left: 100px;
+   width: 120px;
+   margin-top: 10px;
+   margin-bottom: 20px;
+
+}
+.livraison p{
+    /* text-align: center; */
+    font-size: 18px;
+    color: #010c37;
+    font-family: 'Inter', sans-serif;
+}
+
+.livraison img{
+    text-align: center;
+    margin-left: 20px;
+}
+
+footer .contact{
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+/* .contact .contacte{
+
+} */
+
+.contact .contacte h1{
+  font-size: 35px;
+  font-family: 'Inter', sans-serif;
+  color: #010c37;
+  margin-bottom: 5px;
+}
+.contacte p{
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    color: #010c37;
+}
+
+footer .adresses{
+   margin-left: 80px;
+}
+footer .adresse{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    /* justify-content: center; */
+}
+footer .adresse p{
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    color: #010c37;
+    margin-left: 10px;
+}
