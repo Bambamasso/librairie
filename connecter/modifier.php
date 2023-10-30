@@ -1,8 +1,5 @@
 <?php  session_start();
-  $connexion=mysqli_connect ('localhost','root', '','librairie');
-  if(!$connexion){
-   die('erreur de connexion');
-  }
+   require_once('../config.php');
 
   if(!empty($_SESSION['user_id'])){
     $sessionUserId = $_SESSION['user_id'];

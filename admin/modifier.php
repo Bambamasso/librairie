@@ -1,10 +1,7 @@
 <?php
 
 session_start();
-$connexion=mysqli_connect ('localhost','root', '','librairie');
- if(!$connexion){
-  die('erreur de connexion');
- }
+require_once('../config.php');
 
  if(!empty($_SESSION['admin_id'])){
    $sessionAdmin = $_SESSION['admin_id'];
@@ -69,17 +66,17 @@ $connexion=mysqli_connect ('localhost','root', '','librairie');
     mysqli_stmt_execute($requete2);
 
     if(mysqli_affected_rows($connexion)>0){
-      echo "bffgn";
+      // echo "bffgn";
     }else{
     
       // die("mysqli_stmt_error($connexion)");
     }
      if($requete2){
     
-       $selection="INSERT * FROM livres WHERE id=? ";
+       $selection="INSERT * FROM livres WHERE id='$id_modifier' ";
        $requete=mysqli_query($connexion,$selection);
       if($requete){
-        echo"bgbfb";
+        // echo"bgbfb";
         $article=mysqli_fetch_assoc($requete);
         echo "modification validé";
         var_dump($article);

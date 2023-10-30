@@ -6,7 +6,7 @@ body{
     min-height: 100vh;
     flex-direction: column;
     overflow-x: hidden;
-    background: url(../../image/ACT-Litteratie-01.jpeg);
+    /* background: url(../../image/ACT-Litteratie-01.jpeg); */
     height: auto;
     background-size: cover;
     background-repeat:no-repeat;
@@ -21,7 +21,7 @@ box-sizing: border-box;
     position: fixed;
     justify-content: space-between;
     align-items: center;
-    background: #2A87DD;
+    background: #8aec89;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
     z-index: 1;
 
@@ -49,7 +49,7 @@ box-sizing: border-box;
 }
 .droit a{
  text-decoration: none;
- color: white;
+ color: #010c37;
  font-family: 'Inter', sans-serif;
 }
 .droit a:hover{
@@ -77,13 +77,13 @@ box-sizing: border-box;
     position: absolute;
     left: 0;
     width: 200px;
-    background: #2A87DD;
+    background: #8aec89;
     display: none;
 }
 
 .droit ul li ul li{
     width: 100%;
-    border-top: 1px solid greenyellow;
+    border-top: 1px solid white;
 }
 .droit ul li ul li ul{
     left: 200px;
@@ -99,7 +99,7 @@ box-sizing: border-box;
 .onglets label{
     cursor: pointer;
     display: none;
-    color: white;
+    color: #010c37;
     font-size: 20px;
     font-family: 'Inter', sans-serif;
 
@@ -116,7 +116,7 @@ box-sizing: border-box;
         top: 100%;
         left: 0px;
         right: 0px;
-        background: #2A87DD;
+        background: #8aec89;
         display: none;
     }
 
@@ -128,7 +128,7 @@ box-sizing: border-box;
         width: 100%;
     }
     .onglets .droit ul li ul li{
-       background: rgb(138, 138, 241);
+       background: #8aec89;
     }
     .onglets .droit ul li ul li ul{
         width: 100%;
@@ -161,7 +161,7 @@ box-sizing: border-box;
     font-size: 30px;
     font-family:'Inter', sans-serif ;
     text-decoration: underline;
-    color:#100F27 ;
+    color:#010c37 ;
     text-align: center;
 }
 
@@ -179,23 +179,26 @@ box-sizing: border-box;
  }
 
  .livres form label {
-   color:#100F27 ;
+   color:#010c37 ;
    width: fit-content;
    font-family:'Inter', sans-serif ;
 
  }
 
  .livres textarea,select{
-    opacity: 0.7;
+    border: none;
+    outline: none;
+    border: 1px solid #d4d4d4;
+    padding: 10px;
+    resize: none;
  }
 
  .livres form input {
-   border: none;
-   outline: none;
-   border: 1px solid ;
-   padding: 10px;
-   resize: none;
-    opacity: 0.7;
+    border: none;
+    outline: none;
+    border: 1px solid #d4d4d4;
+    padding: 10px;
+    resize: none;
    
    /* background: rgb(180, 182, 183); */
   }
@@ -209,7 +212,7 @@ box-sizing: border-box;
     padding: 10px;
     border-radius: 5px;
     margin: 0 auto;
-    background: #2A87DD;
+    background: #8aec89;
     color: white;
     text-align: center;
     opacity: 1;
@@ -220,6 +223,6 @@ box-sizing: border-box;
   }
 
   .livres form input[type='submit']:hover{
-  background:#2A87DD ;
-  border: 1px solid #2A87DD;
+  background:#010c37 ;
+  border: 1px solid #010c37;
   }

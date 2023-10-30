@@ -1,9 +1,6 @@
 <?php
   session_start();
-  $connexion=mysqli_connect ('localhost','root', '','librairie');
-  if(!$connexion){
-   die('erreur de connexion');
-  }
+  require_once('../config.php');
 
   if(!empty($_SESSION['user_id'])){
     $sessionUserId = $_SESSION['user_id'];
@@ -67,13 +64,13 @@ if ($nb_query) {
 <body>
     <nav class="nav">
         <div class="onglets">
-           <p class="logo"><img src="./image/Capture_d_écran_2023-10-05_à_14.35.01-removebg-preview.png" width="50px" alt=""></p>
+           <p class="logo"  style="color:#010c37;font-size:30px;color:white;margin-left:20px;" >BmLibrairie</p>
            <input type="checkbox" id="barre">
            <label for="barre">Menu</label>
            <div class="droit">
                <ul>
                    <li> <a href="./index.php">Accueil</a></li>
-                   <li><a href="">Contact</a></li>
+                   <!-- <li><a href="">Contact</a></li> -->
                    <li><a href="">Categorie+</a>
                         <ul>
                         <?php foreach($affiches as $value) :?>
@@ -136,7 +133,7 @@ if ($nb_query) {
                         <?php endforeach;?>
                        <?php else:?>
                         <tr>
-                           <td colspan="6">Aucun article dans le panier</td>
+                           <td colspan="6">Aucun livre dans le panier</td>
                         </tr>
                     <?php endif;?>    
                    </tbody>
@@ -154,11 +151,11 @@ if ($nb_query) {
                 
 
                   <div class="prixTotal">
-                    <p style="font-size: 20px;" >Total: </p>
+                    <p style="font-size: 20px;" >Total:</p>
                     <p style="color:#2605CC;"><?php echo number_format($total, 2, '.'); ?>fcfa</p>
                   </div>
                   <div class="command">
-                     <a href="">Commander</a>
+                     <a href="./commande.php">Commander</a>
                   </div>
                   <?php else : ?>
                     <p>aucune facture</p>
@@ -196,16 +193,16 @@ if ($nb_query) {
         <p>Vous avez des question où des préocupations <br> svp contactez-nous </p>
       </div>
       <div class="adresses">
-        <div class="adresse">
-          <div><img src="../image/telephone-handle-silhouette (1).png" alt="n"></div>
+      <div class="adresse">
+          <div><img src="../image/telephone.png" alt="n"></div>
           <div><p>+2250102431214</p></div>
         </div>
         <div class="adresse">
-          <div><img src="../image/email (1).png" alt="n"></div>
+          <div><img src="../image/mail.png" alt="n"></div>
           <div><p>bambamasso51gmail.com</p></div>
         </div>
         <div class="adresse">
-          <div><img src="../image/maps-and-flags.png" alt="n" width="30px"></div>
+          <div><img src="../image/location.png" alt="n" width="30px"></div>
           <div><p>Abidjan, Abobo biabou</p></div>
         </div>
       </div>

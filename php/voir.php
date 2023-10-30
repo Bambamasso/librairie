@@ -1,8 +1,5 @@
 <?php
-$connexion=mysqli_connect ('localhost','root', '','librairie');
-if(!$connexion){
- die('erreur de connexion');
-}
+ require_once('../config.php');
 
 $selection="SELECT *FROM categorie ";
 $execute=mysqli_query($connexion,$selection);
@@ -34,13 +31,13 @@ if(!empty($_GET['id'])){
 <body>
     <nav class="nav">
         <div class="onglets">
-           <p class="logo"><img src="../image/Capture_d_écran_2023-10-05_à_14.35.01-removebg-preview.png" width="50px" alt=""></p>
+        <p class="logo"  style="color:#010c37;font-size:30px;color:white;margin-left:20px;">BmLibrairie</p>
            <input type="checkbox" id="barre">
            <label for="barre">Menu</label>
            <div class="droit">
                <ul>
                    <li> <a href="../index.php">Accueil</a></li>
-                   <li><a href="">Contact</a></li>
+                   <!-- <li><a href="">Contact</a></li> -->
                    <li><a href="">Categorie+</a>
                         <ul>
                         <?php foreach($affiches as $value) :?>
@@ -58,7 +55,7 @@ if(!empty($_GET['id'])){
               <!-- <input type="search" placeholder="recherhce..">  -->
             <ul>
               <a href="./connexion.php"><img src="../image/user.png" alt=""></a>
-              <a href="./panier.php"><img src="../image/panier.png" alt=""></a>
+              <a href="./connexion.php"><img src="../image/panier.png" alt=""></a>
             </ul>
           </div>
       </nav>
@@ -126,16 +123,16 @@ if(!empty($_GET['id'])){
         <p>Vous avez des question où des préocupations <br> svp contactez-nous </p>
       </div>
       <div class="adresses">
-        <div class="adresse">
-          <div><img src="../image/telephone-handle-silhouette (1).png" alt="n"></div>
+      <div class="adresse">
+          <div><img src="../image/telephone.png" alt="n"></div>
           <div><p>+2250102431214</p></div>
         </div>
         <div class="adresse">
-          <div><img src="../image/email (1).png" alt="n"></div>
+          <div><img src="../image/mail.png" alt="n"></div>
           <div><p>bambamasso51gmail.com</p></div>
         </div>
         <div class="adresse">
-          <div><img src="../image/maps-and-flags.png" alt="n" width="30px"></div>
+          <div><img src="../image/location.png" alt="n" width="30px"></div>
           <div><p>Abidjan, Abobo biabou</p></div>
         </div>
       </div>

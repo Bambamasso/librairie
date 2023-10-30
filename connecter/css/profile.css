@@ -170,6 +170,10 @@ box-sizing: border-box;
          /* margin-top: 20px; */
  }
 
+ .profile img{
+   border-radius: 100px;
+ }
+
  .profile .info .p{
     font-size: 18px;
     font-family: 'Inter', sans-serif;

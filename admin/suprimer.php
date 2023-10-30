@@ -1,9 +1,6 @@
 <?php 
 session_start();
-$connexion=mysqli_connect ('localhost','root', '','librairie');
- if(!$connexion){
-  die('erreur de connexion');
- }
+require_once('../config.php');
 
  if(!empty($_SESSION['admin_id'])){
    $sessionAdmin = $_SESSION['admin_id'];

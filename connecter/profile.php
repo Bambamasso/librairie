@@ -1,9 +1,6 @@
 <?php
 session_start();
-$connexion=mysqli_connect ('localhost','root', '','librairie');
-if(!$connexion){
- die('erreur de connexion');
-}
+require_once('../config.php');
 
 if(!empty($_SESSION['user_id'])){
   $sessionUserId = $_SESSION['user_id'];
@@ -52,13 +49,13 @@ if ($nb_query) {
 <body>
 <nav class="nav">
       <div class="onglets">
-         <p class="logo"><img src="../image/Capture_d_écran_2023-10-05_à_14.35.01-removebg-preview.png" width="50px" alt=""></p>
+      <p class="logo"  style="color:#010c37;font-size:30px;color:white;margin-left:20px;">BmLibrairie</p>
          <input type="checkbox" id="barre">
          <label for="barre">Menu</label>
          <div class="droit">
              <ul>
                  <li> <a href="./index.php">Accueil</a></li>
-                 <li><a href="">Contact</a></li>
+                 <!-- <li><a href="">Contact</a></li> -->
                  <li><a href="">Categorie+</a>
                       <ul>
                         <?php foreach($affiches as $value) :?>

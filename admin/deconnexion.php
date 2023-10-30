@@ -1,9 +1,7 @@
 <?php 
 session_start();
-$connexion = mysqli_connect ('localhost', 'root','', 'librairie' );
-if(!$connexion){
-    die('Erreur de connexion à la Base de Donnée');
-     }
+require_once('../config.php');
+
 echo $_SESSION['admin_id'];
 
 if(!empty($_SESSION['admin_id'])){

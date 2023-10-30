@@ -1,9 +1,7 @@
  <?php
   session_start();
-  $connexion=mysqli_connect ('localhost','root', '','librairie');
-   if(!$connexion){
-    die('erreur de connexion');
-   }
+  
+  require_once('../config.php');
  
    if(!empty($_SESSION['admin_id'])){
      $sessionAdmin = $_SESSION['admin_id'];
@@ -47,7 +45,7 @@
 <body>
     <nav class="nav">
         <div class="onglets">
-           <p class="logo"><img src="../image/Capture_d_écran_2023-10-05_à_14.35.01-removebg-preview.png" width="100px" alt=""></p>
+        <p class="logo"  style="color:#010c37;font-size:30px;color:white;margin-left:20px;">BmLibrairie</p>
            <input type="checkbox" id="barre">
            <label for="barre">Menu</label>
            <div class="droit">
@@ -55,26 +53,13 @@
                    <li> <a href="./index.php">Accueil</a></li>
                     <li><a href="./article.php">tableau-bord</a></li>
                     <li><a href="./deconnexion.php">Deconnexion</a></li>
-                  <!-- <li><a href="">Categorie+</a>
-                        <ul>
-                           <li><a href="">lorem</a></li>
-                           <li><a href="">lorem</a></li>
-                           <li><a href="">lorem</a></li>
-                           <li><a href="">lorem</a></li>
-                           <li><a href="">lorem</a></li>
-                        </ul>
-  
-                      </li> -->
+                  
   
                   </ul>
               </div>
          </div>
           <div class="gauche">
-             <!-- <input type="search" placeholder="recherhce.."> -->
-            <!-- <ul>
-              <a href="../php/connexion.php"><img src="./image/user.png" alt=""></a>
-             <a href=""><img src="./image/panier.png" alt=""></a>
-            </ul> -->
+          
           </div>
       </nav>
   <!--fin barre de navigation  -->
